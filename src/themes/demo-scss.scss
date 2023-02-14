@@ -1,0 +1,14 @@
+$hrefColor = #333;
+
+.navbar {
+        ul.menu {
+            list-style: none;
+            li {
+                padding: 5px 15px;
+                a {
+                    text-decoration: none;
+                    color: $hrefColor
+                }
+            }
+    }
+}

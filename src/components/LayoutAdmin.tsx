@@ -10,7 +10,6 @@ type Props = {}
 
 const LayoutAdmin = ({ children }: any) => {
     return (
-
         <Layout style={{ margin: 0, minHeight: '100vh' }}>
             <AdminSideBar />
             <Layout className="site-layout">
@@ -19,7 +18,6 @@ const LayoutAdmin = ({ children }: any) => {
                 <AdminFooter />
             </Layout>
         </Layout>
-
     )
 }
 

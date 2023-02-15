@@ -1,14 +1,14 @@
-import React from 'react';
-import { Space, Table, Tag, Popconfirm, message, Button } from 'antd';
+import { Button, message, Popconfirm, Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import AdminEditProduct from './AdminEditProduct';
+import React from 'react';
+import AdminEditCategory from './AdminEditCategory';
 
 interface DataType {
     key: string;
     name: string;
     age: number;
     address: string;
-    tags: string[];
+
 }
 const text = 'Are you sure to delete this task?';
 const description = 'Delete the task';
@@ -33,31 +33,11 @@ const columns: ColumnsType<DataType> = [
         key: 'address',
     },
     {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
         title: 'Action',
         key: 'action',
         render: (_, record) => (
             <Space size="middle">
-                <AdminEditProduct />
+                <AdminEditCategory />
                 <Popconfirm
                     title={text}
                     description={description}
@@ -79,41 +59,36 @@ const columns: ColumnsType<DataType> = [
 const data: DataType[] = [
     {
         key: '1',
-        name: 'John Brown',
+        name: 'Category 1',
         age: 32,
         address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
     },
     {
         key: '2',
-        name: 'Jim Green',
+        name: 'Category 2',
         age: 42,
         address: 'London No. 1 Lake Park',
-        tags: ['loser'],
     },
     {
         key: '3',
-        name: 'Joe Black',
+        name: 'Category 3',
         age: 32,
         address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
     },
     {
-        key: '3',
-        name: 'Joe Black',
+        key: '4',
+        name: 'Category 4',
         age: 32,
         address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
     },
     {
-        key: '3',
-        name: 'Joe Black',
+        key: '5',
+        name: 'Category 5',
         age: 32,
         address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
     },
 ];
 
-const AdminListProduct: React.FC = () => <Table columns={columns} dataSource={data} />;
+const AdminListCategory: React.FC = () => <Table columns={columns} dataSource={data} />;
 
-export default AdminListProduct;
+export default AdminListCategory;

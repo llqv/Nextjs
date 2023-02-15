@@ -1,9 +1,9 @@
-import React from 'react'
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import { Input, Space } from 'antd';
-import { BellTwoTone, SettingOutlined, SettingTwoTone } from '@ant-design/icons';
+import { BellTwoTone, SettingTwoTone } from '@ant-design/icons';
+import { Input, Layout, theme } from 'antd';
+import React from 'react';
 const { Search } = Input;
 const { Header, Content, Footer, Sider } = Layout;
+
 type Props = {}
 const onSearch = (value: string) => console.log(value);
 const AdminHeader: React.FC = () => {
@@ -12,7 +12,7 @@ const AdminHeader: React.FC = () => {
   } = theme.useToken();
   return (
     <>
-      <Header style={{ padding: 0, background: colorBgContainer }}>
+      <Header style={{ background: colorBgContainer }}>
         <div className='navbar'>
           <ul className='menu'>
             <li>

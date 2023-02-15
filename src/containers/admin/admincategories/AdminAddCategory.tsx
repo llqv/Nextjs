@@ -1,6 +1,6 @@
+import { UploadOutlined } from '@ant-design/icons';
+import { Button, Form, Input, InputNumber, Modal, Select, Upload } from 'antd';
 import React, { useState } from 'react';
-import { Button, Form, Input, InputNumber, Modal, Radio, Select, Upload } from 'antd';
-import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
 
 interface Values {
     title: string;
@@ -20,6 +20,7 @@ const normFile = (e: any) => {
     }
     return e?.fileList;
 };
+
 const { Option } = Select;
 const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
     open,
@@ -30,7 +31,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
     return (
         <Modal
             open={open}
-            title="Create a new collection"
+            title="Create a new Product"
             okText="Create"
             cancelText="Cancel"
             onCancel={onCancel}
@@ -53,13 +54,13 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                 initialValues={{ modifier: 'public' }}
             >
                 <Form.Item
-                    label="Product Name"
-                    name="productname"
-                    rules={[{ required: true, message: 'Please input your Product Name!' }]}
+                    label="Category Name"
+                    name="categoryname"
+                    rules={[{ required: true, message: 'Please input your Category Name!' }]}
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item
+                {/* <Form.Item
                     label="Price"
                     name="price"
                     rules={[{ required: true, message: 'Please input your Price!' }]}
@@ -92,13 +93,13 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                     <Upload name="logo" action="/upload.do" listType="picture">
                         <Button icon={<UploadOutlined />}>Click to upload</Button>
                     </Upload>
-                </Form.Item>
+                </Form.Item> */}
             </Form>
         </Modal>
     );
 };
 
-const AdminEditProduct: React.FC = () => {
+const AdminAddCategory: React.FC = () => {
     const [open, setOpen] = useState(false);
 
     const onCreate = (values: any) => {
@@ -109,13 +110,13 @@ const AdminEditProduct: React.FC = () => {
     return (
         <div>
             <Button
-                style={{ width: 70 }}
+                style={{ backgroundColor: 'green', opacity: 0.9 }}
                 type="primary"
                 onClick={() => {
                     setOpen(true);
                 }}
             >
-                Edit
+                New Category
             </Button>
             <CollectionCreateForm
                 open={open}
@@ -128,4 +129,4 @@ const AdminEditProduct: React.FC = () => {
     );
 };
 
-export default AdminEditProduct;
+export default AdminAddCategory;

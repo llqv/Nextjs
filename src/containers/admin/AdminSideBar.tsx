@@ -28,8 +28,8 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Dashboard', '1', <Link href={'/admin'}><PieChartOutlined /></Link>),
-  getItem('Products', '2', <Link href={'/admin/ListProduct'}><DesktopOutlined /></Link>),
+  getItem('Dashboard', '1', <Link href={'/admin/Dashboard'}><PieChartOutlined /></Link>),
+  getItem('Products', '2', <Link href={'/admin'}><DesktopOutlined /></Link>),
   getItem('Category', '3', <Link href={'/admin/ListCategory'}><TeamOutlined /></Link>),
   getItem('Users', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),

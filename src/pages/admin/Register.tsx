@@ -5,9 +5,7 @@ type Props = {}
 
 const Register = (props: Props) => {
     return (
-        <div style={{ marginTop: 70, marginBottom: 100 }}>
-            <Login />
-        </div>
+        <Login />
     )
 }
 

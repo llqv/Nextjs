@@ -15,6 +15,7 @@ const AdminDashboard = () => {
     } = theme.useToken();
     return (
         <>
+            <h1>Hello World</h1>
             <Content style={{ margin: '0 16px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>User</Breadcrumb.Item>

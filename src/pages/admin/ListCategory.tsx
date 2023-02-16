@@ -6,7 +6,7 @@ import '../../assets/css/styles.scss'
 const { Header, Content, Footer, Sider } = Layout;
 
 
-const ListCategory: React.FC = () => {
+const ListCategory = () => {
     return (
         <>
             <AdminCategory />

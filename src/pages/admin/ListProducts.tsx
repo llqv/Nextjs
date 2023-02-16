@@ -5,7 +5,7 @@ import '../../assets/css/styles.scss'
 const { Header, Content, Footer, Sider } = Layout;
 
 
-const ListProducts: React.FC = () => {
+const ListProducts = () => {
     return (
         <>
             <AdminProduct />

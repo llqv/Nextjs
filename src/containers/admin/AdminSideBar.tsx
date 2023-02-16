@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {
   DesktopOutlined,
   FileOutlined,
+  LoginOutlined,
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
@@ -35,7 +36,7 @@ const items: MenuItem[] = [
     getItem('Bill', '4'),
     getItem('Alex', '5'),
   ]),
-  getItem('Files', '4', <FileOutlined />),
+  getItem('Register', '4', <Link href={'/admin/Register'}><LoginOutlined /></Link>),
 ];
 
 const AdminSideBar: React.FC = () => {

@@ -1,14 +1,25 @@
+import { LayoutAdmin } from '@/components/LayoutAdmin'
+import AdminCategory from '@/containers/admin/AdminCategory'
+import AdminDashboard from '@/containers/admin/AdminDashboard'
 import AdminProduct from '@/containers/admin/AdminProduct'
-import React from 'react'
+import type { ReactElement } from 'react'
+import { NextPageWithLayout } from '../_app'
+import Dashboard from '.'
 
-type Props = {}
-
-const ListProduct = (props: Props) => {
+const PageProduct: NextPageWithLayout = () => {
     return (
-        <div>
+        <>
             <AdminProduct />
-        </div>
+        </>
     )
 }
 
-export default ListProduct
+PageProduct.getLayout = function getLayout(page: ReactElement) {
+    return (
+        <LayoutAdmin>
+            {page}
+        </LayoutAdmin>
+    )
+}
+
+export default PageProduct

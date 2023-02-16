@@ -1,16 +1,17 @@
 import { LayoutAdmin } from '@/components/LayoutAdmin'
-import AdminCategory from '@/containers/admin/AdminCategory'
+import AdminProduct from '@/containers/admin/AdminProduct'
 import React from 'react'
+
 type Props = {}
 
-const ListCategory = (props: Props) => {
+const ListProduct = (props: Props) => {
     return (
         <div>
             <LayoutAdmin>
-                <AdminCategory />
+                <AdminProduct />
             </LayoutAdmin>
         </div>
     )
 }
 
-export default ListCategory
+export default ListProduct

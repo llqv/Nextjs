@@ -2,7 +2,6 @@ import { Breadcrumb, Layout, theme } from 'antd';
 import React from 'react';
 import AdminAddCategory from './admincategories/AdminAddCategory';
 import AdminListCategory from './admincategories/AdminListCategory';
-import AdminAddProduct from './adminproducts/AdminAddProduct';
 const { Header, Content, Footer, Sider } = Layout;
 type Props = {}
 

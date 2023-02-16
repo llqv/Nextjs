@@ -1,3 +1,4 @@
+import { LayoutAdmin } from '@/components/LayoutAdmin'
 import Login from '@/containers/authenticate/Login'
 import React from 'react'
 
@@ -5,11 +6,12 @@ type Props = {}
 
 const Register = (props: Props) => {
     return (
-        <>
-            <div style={{ marginTop: 100, marginBottom: 320 }}>
+        <LayoutAdmin>
+            <div style={{ marginTop: 70, marginBottom: 100 }}>
                 <Login />
             </div>
-        </>
+        </LayoutAdmin>
+
     )
 }
 

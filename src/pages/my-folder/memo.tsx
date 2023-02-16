@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-
 type Props = {
   count: number;
 };

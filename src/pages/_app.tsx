@@ -1,16 +1,11 @@
-import { LayoutAdmin } from '@/components/LayoutAdmin'
-import React from 'react'
+import { LayoutAdmin } from "@/components/LayoutAdmin";
+import React from "react";
 
-type Props = {}
-
-const MyApp = ({ Component, pageProps }: any) => {
+const App = ({ Component, pageProps }: any) => {
     return (
-        <>
-            <LayoutAdmin>
-                <Component  {...pageProps} />
-            </LayoutAdmin>
-        </>
+        <div>
+            <Component {...pageProps} />
+        </div>
     )
-}
-
-export default MyApp
+};
+export default App

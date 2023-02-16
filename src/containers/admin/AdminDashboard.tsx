@@ -6,9 +6,10 @@ const { Header, Content, Footer, Sider } = Layout;
 import DemoLine from './admindashboard/DemoLine'
 import DemoRingProgress from './admindashboard/DemoRingProgress';
 import DemoRingUnprogress from './admindashboard/DemoRingUnprogress';
+import { Col, Row } from 'antd';
 type Props = {}
 
-const AdminDashboard = (props: Props) => {
+const AdminDashboard = () => {
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -20,20 +21,20 @@ const AdminDashboard = (props: Props) => {
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                 </Breadcrumb>
                 <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-                    <div className="dashboard">
-                        <div className="item-1 item"><DemoCard /></div>
-                        <div style={{ display: 'flex' }}>
-                            <div style={{ margin: 65 }} className="item-2 item"><DemoLine /></div>
-                            <div style={{ margin: 65 }} className="item-2 item"><DemoChart /></div>
-                            <div style={{ margin: 65 }} className="item-2 item"><DemoColumn /></div>
-                        </div>
-                        <div style={{ display: 'flex', margin: 30 }}>
-                            <div style={{ margin: 50 }} className="item-3 item"><DemoRingProgress /></div>
-                            <div style={{ margin: 50 }} className="item-3 item"><DemoRingUnprogress /></div>
-                            <div style={{ margin: 50 }} className="item-3 item"><DemoRingProgress /></div>
-                            <div style={{ margin: 50 }} className="item-3 item"><DemoRingUnprogress /></div>
-                        </div>
-                    </div>
+                    <Row>
+                        <Col span={24}><DemoCard /></Col>
+                    </Row>
+                    <Row className='item'>
+                        <Col className='item1' span={6}><DemoLine /></Col>
+                        <Col className='item1' span={6}><DemoChart /></Col>
+                        <Col className='item1' span={6}><DemoColumn /></Col>
+                    </Row>
+                    <Row className='item'>
+                        <Col span={6}><DemoRingProgress /></Col>
+                        <Col span={6}><DemoRingUnprogress /></Col>
+                        <Col span={6}><DemoRingProgress /></Col>
+                        <Col span={6}><DemoRingUnprogress /></Col>
+                    </Row>
                     <div style={{ padding: 14, float: 'right' }}>
                     </div>
                 </div>

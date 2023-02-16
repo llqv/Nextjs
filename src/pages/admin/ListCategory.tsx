@@ -1,4 +1,3 @@
-import { LayoutAdmin } from '@/components/LayoutAdmin'
 import AdminCategory from '@/containers/admin/AdminCategory'
 import React from 'react'
 type Props = {}
@@ -6,9 +5,7 @@ type Props = {}
 const ListCategory = (props: Props) => {
     return (
         <div>
-            <LayoutAdmin>
-                <AdminCategory />
-            </LayoutAdmin>
+            <AdminCategory />
         </div>
     )
 }

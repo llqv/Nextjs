@@ -6,8 +6,9 @@ type Props = {}
 const index = ({ Component, pageProps }: any) => {
     return (
         <div>
-            <LayoutAdmin>
-            </LayoutAdmin>
+            {/* <LayoutAdmin> */}
+            {/* <Component {...pageProps} /> */}
+            {/* </LayoutAdmin> */}
         </div>
     )
 }

@@ -4,7 +4,9 @@ import React from "react";
 const App = ({ Component, pageProps }: any) => {
     return (
         <div>
-            <Component {...pageProps} />
+            <LayoutAdmin>
+                <Component {...pageProps} />
+            </LayoutAdmin>
         </div>
     )
 };

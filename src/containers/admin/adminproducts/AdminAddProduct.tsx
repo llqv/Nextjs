@@ -1,18 +1,22 @@
+import { IProduct } from '@/models/Product';
+import { addProduct, getProducts } from '@/service/product';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, Form, Input, InputNumber, Modal, Select, Upload } from 'antd';
-import React, { useState } from 'react';
+import { Button, Form, Input, InputNumber, message, Modal, Select, Upload } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { SubmitHandler } from "react-hook-form";
+import { useMutation, useQuery } from 'react-query';
 
-interface Values {
-    title: string;
-    description: string;
-    modifier: string;
-}
+
 
 interface CollectionCreateFormProps {
     open: boolean;
-    onCreate: (values: Values) => void;
+    onCreate: any
     onCancel: () => void;
+    onnotification: any
 }
+const onnotification = () => {
+    message.info("Create Product Successfully");
+};
 const normFile = (e: any) => {
     console.log('Upload event:', e);
     if (Array.isArray(e)) {
@@ -25,6 +29,7 @@ const { Option } = Select;
 const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
     open,
     onCreate,
+    onnotification,
     onCancel,
 }) => {
     const [form] = Form.useForm();
@@ -41,6 +46,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                     .then((values) => {
                         form.resetFields();
                         onCreate(values);
+                        onnotification()
                     })
                     .catch((info) => {
                         console.log('Validate Failed:', info);
@@ -54,8 +60,8 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                 initialValues={{ modifier: 'public' }}
             >
                 <Form.Item
-                    label="Product Name"
-                    name="productname"
+                    label="Name"
+                    name="name"
                     rules={[{ required: true, message: 'Please input your Product Name!' }]}
                 >
                     <Input />
@@ -67,19 +73,26 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                 >
                     <InputNumber style={{ width: 470 }} />
                 </Form.Item>
-                <Form.Item name="category" label="Category" rules={[{ required: true }]}>
+                <Form.Item
+                    label="Quantity"
+                    name="quantity"
+                    rules={[{ required: true, message: 'Please input your Quantity!' }]}
+                >
+                    <InputNumber style={{ width: 470 }} />
+                </Form.Item>
+                <Form.Item name="category" label="Category" rules={[{ required: true, message: 'Please choose your Category!' }]}>
                     <Select
                         placeholder="Select a category"
                         allowClear
                     >
-                        <Option value="male">Category 1</Option>
-                        <Option value="female">Category 2</Option>
-                        <Option value="other">Category 3</Option>
+                        <Option value="category 1">Category 1</Option>
+                        <Option value="category 2">Category 2</Option>
+                        <Option value="category 3">Category 3</Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
                     label="Descriptions"
-                    name="deescription"
+                    name="description"
                     rules={[{ required: true, message: 'Please input your Descriptions!' }]}
                 >
                     <Input.TextArea />
@@ -101,11 +114,17 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
 
 const AdminAddProduct: React.FC = () => {
     const [open, setOpen] = useState(false);
-
-    const onCreate = (values: any) => {
-        console.log('Received values of form: ', values);
-        setOpen(false);
-    };
+    const { data: allProduct, refetch: getAllProduct } = useQuery('getProducts', getProducts)
+    const { data: extraProduct, mutate: createProduct } = useMutation('addproduct', addProduct)
+    const onCreate: SubmitHandler<IProduct> = async (data) => {
+        await createProduct(data)
+        console.log(data);
+    }
+    useEffect(() => {
+        if (extraProduct) {
+            getAllProduct()
+        }
+    }, [extraProduct])
 
     return (
         <div>
@@ -124,6 +143,8 @@ const AdminAddProduct: React.FC = () => {
                 onCancel={() => {
                     setOpen(false);
                 }}
+                onnotification={onnotification}
+
             />
         </div>
     );

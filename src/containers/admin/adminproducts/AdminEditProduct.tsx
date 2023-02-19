@@ -1,18 +1,22 @@
+import { IProduct } from '@/models/Product';
+import { getProducts, updateProduct } from '@/service/product';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, Form, Input, InputNumber, Modal, Select, Upload } from 'antd';
-import React, { useState } from 'react';
+import { Button, Form, Input, InputNumber, message, Modal, Select, Upload } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { SubmitHandler, Controller, useForm } from 'react-hook-form';
+import { useMutation, useQuery } from 'react-query';
 
-interface Values {
-    title: string;
-    description: string;
-    modifier: string;
-}
 
 interface CollectionCreateFormProps {
     open: boolean;
-    onCreate: (values: Values) => void;
+    onUpdate: any;
     onCancel: () => void;
+    onnotification: any;
+    product: { key: string, name: string, price: number, quantity: number, desc: string, category: string, image: string }
 }
+const onnotification = () => {
+    message.info("Create Product Successfully");
+};
 const normFile = (e: any) => {
     console.log('Upload event:', e);
     if (Array.isArray(e)) {
@@ -23,10 +27,15 @@ const normFile = (e: any) => {
 const { Option } = Select;
 const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
     open,
-    onCreate,
+    onUpdate,
     onCancel,
+    onnotification,
+    product
 }) => {
+    console.log(product);
+
     const [form] = Form.useForm();
+    const { control } = useForm<IProduct>()
     return (
         <Modal
             open={open}
@@ -39,7 +48,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                     .validateFields()
                     .then((values) => {
                         form.resetFields();
-                        onCreate(values);
+                        onUpdate(values);
                     })
                     .catch((info) => {
                         console.log('Validate Failed:', info);
@@ -53,8 +62,9 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                 initialValues={{ modifier: 'public' }}
             >
                 <Form.Item
-                    label="Product Name"
-                    name="productname"
+                    label="Name"
+                    name="name"
+                    initialValue={product.name}
                     rules={[{ required: true, message: 'Please input your Product Name!' }]}
                 >
                     <Input />
@@ -62,49 +72,71 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                 <Form.Item
                     label="Price"
                     name="price"
+                    initialValue={product.price}
                     rules={[{ required: true, message: 'Please input your Price!' }]}
                 >
                     <InputNumber style={{ width: 470 }} />
                 </Form.Item>
-                <Form.Item name="category" label="Category" rules={[{ required: true }]}>
-                    <Select
+                <Form.Item
+                    label="Quantity"
+                    name="quantity"
+                    initialValue={product.quantity}
+                    rules={[{ required: true, message: 'Please input your Quantity!' }]}
+                >
+                    <InputNumber style={{ width: 470 }} />
+                </Form.Item>
+                <Form.Item name="category" label="Category" rules={[{ required: true, message: 'Please choose your Category!' }]}>
+                    <Select defaultValue={product.category}
                         placeholder="Select a category"
                         allowClear
                     >
-                        <Option value="male">Category 1</Option>
-                        <Option value="female">Category 2</Option>
-                        <Option value="other">Category 3</Option>
+                        <Option value="category 1">Category 1</Option>
+                        <Option value="category 2">Category 2</Option>
+                        <Option value="category 3">Category 3</Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
                     label="Descriptions"
-                    name="deescription"
+                    name="description"
+                    initialValue={product.desc}
                     rules={[{ required: true, message: 'Please input your Descriptions!' }]}
                 >
                     <Input.TextArea />
                 </Form.Item>
-                <Form.Item
-                    name="upload"
-                    label="Upload"
-                    valuePropName="fileList"
-                    getValueFromEvent={normFile}
-                >
-                    <Upload name="logo" action="/upload.do" listType="picture">
-                        <Button icon={<UploadOutlined />}>Click to upload</Button>
-                    </Upload>
-                </Form.Item>
+                <Controller name="name" control={control} render={({ field }) =>
+                    <Form.Item
+                        name="upload"
+                        label="Upload"
+                        valuePropName="fileList"
+                        getValueFromEvent={normFile}
+                        initialValue={product.image}
+                    >
+
+                        <Upload name="logo" action="/upload.do" listType="picture">
+                            <Button icon={<UploadOutlined />}>Click to upload</Button>
+                        </Upload>
+                    </Form.Item>} />
             </Form>
         </Modal>
     );
 };
 
-const AdminEditProduct: React.FC = () => {
+const AdminEditProduct = ({ product }: { product: { key: string, name: string, price: number, quantity: number, desc: string, category: string, image: string } }) => {
+    // console.log("hahah", idproduct);
+    // console.log(idproduct);
     const [open, setOpen] = useState(false);
-
-    const onCreate = (values: any) => {
-        console.log('Received values of form: ', values);
-        setOpen(false);
-    };
+    const { data: allProduct, refetch: getAllProduct } = useQuery('getProducts', getProducts)
+    const { data: editProduct, mutate: repairProduct } = useMutation('editproduct', updateProduct)
+    const onUpdate: SubmitHandler<IProduct> = async (data) => {
+        data.id = product.key
+        await repairProduct(data)
+        console.log(data);
+    }
+    useEffect(() => {
+        if (editProduct) {
+            getAllProduct()
+        }
+    }, [editProduct])
 
     return (
         <div>
@@ -114,15 +146,18 @@ const AdminEditProduct: React.FC = () => {
                 onClick={() => {
                     setOpen(true);
                 }}
+
             >
                 Edit
             </Button>
             <CollectionCreateForm
                 open={open}
-                onCreate={onCreate}
+                onUpdate={onUpdate}
                 onCancel={() => {
                     setOpen(false);
                 }}
+                onnotification={onnotification}
+                product={product}
             />
         </div>
     );

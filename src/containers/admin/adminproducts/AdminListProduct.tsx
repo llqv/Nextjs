@@ -1,154 +1,73 @@
-import { Button, message, Popconfirm, Space, Table, Tag } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
-import React from 'react';
+import { getProducts, removeProduct } from '@/service/product';
+import { Button, message, Popconfirm, Space, Table } from 'antd';
+import { useEffect } from 'react';
+import { useMutation, useQuery } from 'react-query';
 import AdminEditProduct from './AdminEditProduct';
 
-interface DataType {
-    key: string;
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
-}
+const { Column } = Table;
 const text = 'Are you sure to delete this task?';
 const description = 'Delete the task';
-const confirm = () => {
+const confirm = (id: string) => {
     message.info('Delete Successfully.');
 };
-const columns: ColumnsType<DataType> = [
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        render: (text) => <a>{text}</a>,
-    },
-    {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-    },
-    {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <AdminEditProduct />
-                <Popconfirm
-                    title={text}
-                    description={description}
-                    onConfirm={confirm}
-                    okText="Yes"
-                    cancelText="No"
-                >
-                    <Button
-                        type="primary" danger
-                    >
-                        Delete
-                    </Button>
-                </Popconfirm>
-            </Space>
-        ),
-    },
-];
 
-const data: DataType[] = [
-    {
-        key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
+type Props = {}
 
-const AdminListProduct: React.FC = () => <Table columns={columns} dataSource={data} />;
-
-export default AdminListProduct;
+const AdminListProduct = (props: Props) => {
+    const { data: allProduct, refetch: getAllProduct } = useQuery('getProducts', getProducts)
+    const { data: delProduct, mutate: removeProductmutae } = useMutation('removeProduct', removeProduct)
+    console.log(allProduct);
+    useEffect(() => {
+        if (delProduct) {
+            getAllProduct()
+        }
+    }, [delProduct])
+    return (
+        <div>
+            <Table dataSource={allProduct?.map((product) => ({
+                key: product.id,
+                name: product.name,
+                img: product.img,
+                price: product.price,
+                quantity: product.quantity,
+                category: product.category,
+                desc: product.description
+            })) || []}>
+                <Column title="Name" dataIndex="name" key="name" />
+                <Column title="Image" render={(product) => <img style={{ width: "150px", height: "100px", objectFit: "cover" }} src={product.img} />} key="img" />
+                <Column title="Price" dataIndex="price" key="price" />
+                <Column title="Quantity" dataIndex="quantity" key="quantity" />
+                <Column title="Category" dataIndex="category" key="category" />
+                <Column title="Desc" dataIndex="desc" key="desc" />
+                <Column
+                    title="Action"
+                    key="action"
+                    render={(product) => {
+                        return (
+                            <Space size="middle">
+                                <AdminEditProduct product={product} />
+                                <Popconfirm
+                                    title={text}
+                                    description={description}
+                                    onConfirm={() => {
+                                        removeProductmutae(product.key)
+                                        confirm(product.key)
+                                    }}
+                                    okText="Yes"
+                                    cancelText="No"
+                                >
+                                    <Button
+                                        type="primary" danger
+                                    >
+                                        Delete
+                                    </Button>
+                                </Popconfirm>
+                            </Space>
+                        )
+                    }}
+                ></Column>
+            </Table >
+        </div >
+    )
+}
+export default AdminListProduct

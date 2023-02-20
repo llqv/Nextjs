@@ -1,13 +1,19 @@
-import { IProduct } from '@/models/Product';
-import { addProduct, getProducts } from '@/service/product';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Form, Input, InputNumber, message, Modal, Select, Upload } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { SubmitHandler } from "react-hook-form";
-import { useMutation, useQuery } from 'react-query';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 
-
+interface IData {
+    id: number;
+    name: string;
+    body: string;
+    price: number;
+    description: string;
+    img: string;
+    quantity: number;
+    category: string
+}
 interface CollectionCreateFormProps {
     open: boolean;
     onCreate: any
@@ -112,19 +118,13 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
     );
 };
 
-const AdminAddProduct: React.FC = () => {
+const AdminAddProduct = ({ resetdata }: { resetdata: any }) => {
     const [open, setOpen] = useState(false);
-    const { data: allProduct, refetch: getAllProduct } = useQuery('getProducts', getProducts)
-    const { data: extraProduct, mutate: createProduct } = useMutation('addproduct', addProduct)
-    const onCreate: SubmitHandler<IProduct> = async (data) => {
-        await createProduct(data)
-        console.log(data);
-    }
-    useEffect(() => {
-        if (extraProduct) {
-            getAllProduct()
-        }
-    }, [extraProduct])
+    const handleCreate = async (newData: IData) => {
+        const result = await axios.post('http://localhost:3100/products', newData);
+        resetdata(result.data)
+        setOpen(false)
+    };
 
     return (
         <div>
@@ -139,7 +139,7 @@ const AdminAddProduct: React.FC = () => {
             </Button>
             <CollectionCreateForm
                 open={open}
-                onCreate={onCreate}
+                onCreate={handleCreate}
                 onCancel={() => {
                     setOpen(false);
                 }}

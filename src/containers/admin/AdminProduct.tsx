@@ -17,9 +17,7 @@ const AdminProduct: React.FC = () => {
           <Breadcrumb.Item>Product</Breadcrumb.Item>
         </Breadcrumb>
         <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-          <div style={{ padding: 14, float: 'right' }}>
-            <AdminAddProduct />
-          </div>
+
           <AdminListProduct />
         </div>
       </Content>

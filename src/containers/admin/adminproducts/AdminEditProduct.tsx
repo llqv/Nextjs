@@ -1,12 +1,20 @@
 import { IProduct } from '@/models/Product';
-import { getProducts, updateProduct } from '@/service/product';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Form, Input, InputNumber, message, Modal, Select, Upload } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { SubmitHandler, Controller, useForm } from 'react-hook-form';
-import { useMutation, useQuery } from 'react-query';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
-
+interface IData {
+    id: number;
+    name: string;
+    body: string;
+    price: number;
+    description: string;
+    img: string;
+    quantity: number;
+    category: string
+}
 interface CollectionCreateFormProps {
     open: boolean;
     onUpdate: any;
@@ -48,7 +56,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                     .validateFields()
                     .then((values) => {
                         form.resetFields();
-                        onUpdate(values);
+                        onUpdate(product.key, values);
                     })
                     .catch((info) => {
                         console.log('Validate Failed:', info);
@@ -121,23 +129,16 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
     );
 };
 
-const AdminEditProduct = ({ product }: { product: { key: string, name: string, price: number, quantity: number, desc: string, category: string, image: string } }) => {
+const AdminEditProduct = ({ product, resetdata }: { resetdata: any, product: { key: string, name: string, price: number, quantity: number, desc: string, category: string, image: string } }) => {
+
     // console.log("hahah", idproduct);
     // console.log(idproduct);
     const [open, setOpen] = useState(false);
-    const { data: allProduct, refetch: getAllProduct } = useQuery('getProducts', getProducts)
-    const { data: editProduct, mutate: repairProduct } = useMutation('editproduct', updateProduct)
-    const onUpdate: SubmitHandler<IProduct> = async (data) => {
-        data.id = product.key
-        await repairProduct(data)
-        console.log(data);
-    }
-    useEffect(() => {
-        if (editProduct) {
-            getAllProduct()
-        }
-    }, [editProduct])
-
+    const handleUpdate = async (id: number, updatedData: IData) => {
+        const result = await axios.put(`http://localhost:3100/products/${id}`, updatedData);
+        resetdata(id, result.data)
+        setOpen(false)
+    };
     return (
         <div>
             <Button
@@ -152,7 +153,7 @@ const AdminEditProduct = ({ product }: { product: { key: string, name: string, p
             </Button>
             <CollectionCreateForm
                 open={open}
-                onUpdate={onUpdate}
+                onUpdate={handleUpdate}
                 onCancel={() => {
                     setOpen(false);
                 }}

@@ -1,6 +1,6 @@
 import { Button, message, Popconfirm, Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminEditProduct from './AdminEditProduct';
 
 interface DataType {

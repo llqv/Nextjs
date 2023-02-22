@@ -125,7 +125,6 @@ const AdminAddProduct = ({ resetdata }: { resetdata: any }) => {
         resetdata(result.data)
         setOpen(false)
     };
-
     return (
         <div>
             <Button

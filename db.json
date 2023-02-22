@@ -1,10 +1,10 @@
 {
   "products": [
     {
-      "name": "Product 7 1",
+      "name": "Product 7 1 update",
       "price": "700",
       "quantity": 123,
-      "category": "category 2",
+      "category": "category 3",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
       "id": 7
     },
@@ -63,165 +63,6 @@
       "price": "800",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
       "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 9,
-      "name": "Product 9",
-      "price": "900",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 2"
-    },
-    {
-      "name": "123",
-      "price": 123,
-      "quantity": 321,
-      "category": "category 1",
-      "description": "321321",
-      "id": 10
-    },
-    {
-      "name": "321",
-      "price": 321,
-      "quantity": 321,
-      "category": "category 3",
-      "description": "321",
-      "id": 11
-    },
-    {
-      "name": "321 123",
-      "price": 321,
-      "quantity": 123,
-      "category": "category 3",
-      "description": "321321",
-      "id": 12
-    },
-    {
-      "name": "321",
-      "price": 321,
-      "quantity": 32321,
-      "category": "category 3",
-      "description": "32131",
-      "id": 13
-    },
-    {
-      "name": "2131231232112",
-      "price": 321,
-      "quantity": 321,
-      "category": "category 2",
-      "description": "12312312312312",
-      "id": 14
     }
   ],
   "categories": [

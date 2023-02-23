@@ -29,30 +29,38 @@ import StatusStoreImage from '../public/Vector.png'
 import TimeImage from '../public/time.png'
 import TimeStartImage from '../public/Frame 60.png'
 import TimeEndImage from '../public/Frame 61.png'
+
 const contentStyle: React.CSSProperties = {
+    position: 'relative',
     marginTop: 4,
-    marginLeft: 100,
+    marginLeft: 170,
     marginRight: 100,
     minHeight: 120,
     height: 1700,
     color: '#fff',
 };
 const StyleContent = styled.div`
-width: 260px;
-height: 380px;
+position: relative;
+width: 280px;
+height: 420px;
 border-radius: 10px;
 background: white;
 color: black;
 font-family: 'Gilroy';
 font-style: normal;
+box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+
 `
 const StyleFormContent = styled.div`
+position: relative;
 /* padding : top | right | bottom | left */
+padding-top: 10px;
     margin: 10px 0px 10px 0px;
 `
 const StyleSidebar = styled.div`
+padding-top: 2px;
     width: 258px;
-    height: 1300px;
+    height: 1760px;
     /* bg/2 */
     background: #FFFFFF;
     /* Navigation Menu Bar */
@@ -82,17 +90,17 @@ const StyleSidebar = styled.div`
     }
 `
 const StyleContentProduct = styled.div`
+position: relative;
     margin-left: 10px;
     font-family: 'Gilroy';
     font-style: normal;
-    h3{
+    h4{
         font-weight: 700;
         font-size: 24px;
-        line-height: 24px;
+        padding-left: 30px;
     }
     div {
         display: flex;
-        place-items: center;
         p {
             margin-left: 10px;
         }
@@ -104,14 +112,29 @@ const StyleContentProduct = styled.div`
             margin-left: 10px;
             font-weight: 400;
             font-size: 12px;
-            line-height: 14px;
             display: flex;
             align-items: center;
             color: #1DAC0E;
         }
     }
-    h1{
+    h1.item{
        padding-top: 16;
+       .timestart {
+        margin-left: 6px;
+       }
+       .timeend{
+        margin-left: 25px;
+       }
+    }
+    div.item2{
+        .delivery{
+
+        }
+        .booking{
+        padding-bottom: 10px;
+            margin-left: 30px;
+
+        }
     }
     
 
@@ -127,11 +150,13 @@ const HomeContent = (props: Props) => {
                             <Row gutter={[16, 16]}>
                                 <Col span={8}>
                                     <StyleContent>
-                                        <Image src={Product1Image} alt="" />
+                                        <div>
+                                            <Image className='productimage' src={Product1Image} alt="" width={280} />
+                                        </div>
                                         <StyleContentProduct>
-                                            <h3>
+                                            <h1>
                                                 Peppo restaurant
-                                            </h3>
+                                            </h1>
                                             <div>
                                                 <Image src={AddressImage} alt="" />
                                                 <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
@@ -141,35 +166,348 @@ const HomeContent = (props: Props) => {
                                                 <span>Đang mở cửa</span>
                                             </div>
                                             <h1 className='item'>
-                                                <Image src={TimeImage} alt="" />
-                                                <Image src={TimeStartImage} alt="" />
-                                                <Image src={TimeEndImage} alt="" />
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
                                             </h1>
-                                            <div>
-                                                <Image src={DeliveryImage} alt="" width={101} height={60} />
-                                                <Image src={BookingImage} alt="" />
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
                                             </div>
                                         </StyleContentProduct>
                                     </StyleContent>
                                 </Col>
-                                <Col span={8}><StyleContent>
-                                    <Image src={Product2Image} alt="" /></StyleContent></Col>
-                                <Col span={8}><StyleContent>
-                                    <Image src={Product3Image} alt="" /></StyleContent></Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product2Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product3Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
                             </Row>
                         </StyleFormContent>
                         <StyleFormContent>
                             <Row gutter={[16, 16]}>
-                                <Col span={8}><StyleContent>1</StyleContent></Col>
-                                <Col span={8}><StyleContent>2</StyleContent></Col>
-                                <Col span={8}><StyleContent>3</StyleContent></Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product4Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product5Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product1Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
                             </Row>
                         </StyleFormContent>
                         <StyleFormContent>
                             <Row gutter={[16, 16]}>
-                                <Col span={8}><StyleContent>1</StyleContent></Col>
-                                <Col span={8}><StyleContent>2</StyleContent></Col>
-                                <Col span={8}><StyleContent>3</StyleContent></Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product2Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product3Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product4Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                            </Row>
+                        </StyleFormContent>
+                        <StyleFormContent>
+                            <Row gutter={[16, 16]}>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product5Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product1Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
+                                <Col span={8}>
+                                    <StyleContent>
+                                        <div>
+                                            <Image className='productimage' src={Product2Image} alt="" width={280} />
+                                        </div>
+                                        <StyleContentProduct>
+                                            <h1>
+                                                Peppo restaurant
+                                            </h1>
+                                            <div>
+                                                <Image src={AddressImage} alt="" />
+                                                <p>12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)</p>
+                                            </div>
+                                            <div>
+                                                <Image src={StatusStoreImage} alt="" />
+                                                <span>Đang mở cửa</span>
+                                            </div>
+                                            <h1 className='item'>
+                                                <Image className='timeimange' src={TimeImage} alt="" />
+                                                <Image className='timestart' src={TimeStartImage} alt="" />
+                                                <Image className='timeend' src={TimeEndImage} alt="" />
+                                            </h1>
+                                            <div className='item2'>
+                                                <Image className='delivery' src={DeliveryImage} alt="" />
+                                                <Image className='booking' src={BookingImage} alt="" />
+                                            </div>
+                                        </StyleContentProduct>
+                                    </StyleContent>
+                                </Col>
                             </Row>
                         </StyleFormContent>
                     </Col>

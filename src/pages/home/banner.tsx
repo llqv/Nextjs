@@ -10,6 +10,7 @@ interface content { }
 interface formcontent { }
 
 const bannerStyle: React.CSSProperties = {
+    position: 'relative',
     marginTop: 4,
     color: '#fff',
     textAlign: 'center',

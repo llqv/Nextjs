@@ -9,6 +9,7 @@ import AvatarImg from '../public/Avatar.png';
 const { Header, Footer, Sider, Content } = Layout;
 
 const headerStyle: React.CSSProperties = {
+    position: 'relative',
     textAlign: 'center',
     color: '#000000',
     height: 80,

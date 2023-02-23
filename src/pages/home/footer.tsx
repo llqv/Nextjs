@@ -9,7 +9,9 @@ import AndroidImage from '../public/Group 63.png'
 import LogoImg from '../public/LogoFooter.png';
 import SocialNetWorkImage from '../public/Group 61.png'
 import SubcribeImage from '../public/image 2.png'
+
 const footerStyle: React.CSSProperties = {
+    paddingTop: 110,
     textAlign: 'center',
     color: '#fff',
     backgroundColor: 'white'
@@ -66,7 +68,7 @@ letter-spacing: -0.01em;
 color: #828282;
 `
 const StyleOperatingSystem = styled.div`
-    padding-top: 15px;
+    padding-top: 25px;
 `
 const HomeFooter = (props: Props) => {
 

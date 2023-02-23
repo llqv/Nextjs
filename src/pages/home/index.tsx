@@ -9,12 +9,14 @@ const { Header, Footer, Sider, Content } = Layout;
 const Home = (props: Props) => {
     return (
         <>
-            <Layout style={{ backgroundColor: 'white' }}>
-                <HomeHeader />
-                <HomeBanner />
-                <HomeContent />
-                <HomeFooter />
-            </Layout>
+            <div style={{ position: 'relative' }}>
+                <Layout style={{ backgroundColor: 'white' }}>
+                    <HomeHeader />
+                    <HomeBanner />
+                    <HomeContent />
+                    <HomeFooter />
+                </Layout>
+            </div>
         </>
     )
 }

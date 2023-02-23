@@ -11,7 +11,7 @@ const { Header, Footer, Sider, Content } = Layout;
 const headerStyle: React.CSSProperties = {
     textAlign: 'center',
     color: '#000000',
-    height: 64,
+    height: 80,
     paddingInline: 50,
     lineHeight: '64px',
     backgroundColor: '#FFFFFF',
@@ -38,17 +38,17 @@ background-color: #FFFFFF;
     border: 1px solid #FCDAB0;
 `
 const StyleButtonOrder = styled.button`
-width: 74px;
-height: 34px;
-background-color: #FF881D;
+    width: 74px;
+    height: 34px;
+    background-color: #FF881D;
     border-radius:10px;
     border: 1px solid #FCDAB0;
     font-family: 'Gilroy';
     color: white;
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
 `
 const StyleButtonLanguage = styled.button`
 width: 74px;
@@ -99,10 +99,10 @@ const HomeHeader = (props: Props) => {
                                         <Image style={{ marginTop: 17 }} src={AvatarImg} alt="" />
                                     </StyleAvatar>
                                 </Col>
-
+                                {/* 
                                 <Col span={8}>
-                                    {/* <StyleLogin>Đăng nhập</StyleLogin> */}
-                                </Col>
+                                    <StyleLogin>Đăng nhập</StyleLogin>
+                                </Col> */}
                             </Row>
                         </StyleContent>
                     </Col>

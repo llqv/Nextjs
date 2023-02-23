@@ -28,15 +28,6 @@ const HomeBanner = (props: Props) => {
                     <div>
                         <Image style={{ margin: 'auto' }} src={BannerImg} alt="" width={1312} height={496} />
                     </div>
-                    <div>
-                        <Image style={{ margin: 'auto' }} src={BannerImg} alt="" width={1312} height={496} />
-                    </div>
-                    <div>
-                        <Image style={{ margin: 'auto' }} src={BannerImg} alt="" width={1312} height={496} />
-                    </div>
-                    <div>
-                        <Image style={{ margin: 'auto' }} src={BannerImg} alt="" width={1312} height={496} />
-                    </div>
                 </Carousel>
                 <Layout />
             </Layout>

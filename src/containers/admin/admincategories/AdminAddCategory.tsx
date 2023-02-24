@@ -1,5 +1,4 @@
-import { UploadOutlined } from '@ant-design/icons';
-import { Button, Form, Input, InputNumber, Modal, Select, Upload } from 'antd';
+import { Button, Form, Input, Modal, Select } from 'antd';
 import React, { useState } from 'react';
 
 interface Values {

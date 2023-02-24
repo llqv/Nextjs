@@ -1,4 +1,3 @@
-import { IProduct } from '@/models/Product';
 // import { getProducts } from '@/service/product';
 import { Button, message, Popconfirm, Space, Table } from 'antd';
 import axios from 'axios';
@@ -61,7 +60,7 @@ const AdminListProduct = (props: Props) => {
                     desc: product.description
                 })) || []}>
                     <Column title="Name" dataIndex="name" key="name" />
-                    <Column title="Image" render={(product) => <img style={{ width: "150px", height: "100px", objectFit: "cover" }} src={product.img} />} key="img" />
+                    <Column title="Image" key="img" />
                     <Column title="Price" dataIndex="price" key="price" />
                     <Column title="Quantity" dataIndex="quantity" key="quantity" />
                     <Column title="Category" dataIndex="category" key="category" />

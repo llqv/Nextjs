@@ -3,6 +3,7 @@ import HomeBanner from './banner';
 import HomeContent from './content';
 import HomeFooter from './footer';
 import HomeHeader from './header';
+import HomeSidebar from './sidebar';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -10,10 +11,13 @@ const Home = (props: Props) => {
     return (
         <>
             <div style={{ position: 'relative' }}>
-                <Layout style={{ backgroundColor: 'white' }}>
+                <Layout style={{ backgroundColor: 'white', maxWidth:'1500px', margin:'auto'}}>
                     <HomeHeader />
                     <HomeBanner />
+                    <div style={{display:'flex'}}>
+                    <HomeSidebar/>
                     <HomeContent />
+                    </div>
                     <HomeFooter />
                 </Layout>
             </div>

@@ -1,11 +1,11 @@
 import { Breadcrumb, Layout, theme } from 'antd';
-import DemoCard from './admindashboard/DemoCard';
-import DemoChart from './admindashboard/DemoChart';
-import DemoColumn from './admindashboard/DemoColumn';
+// import DemoCard from './admindashboard/DemoCard';
+// import DemoChart from './admindashboard/DemoChart';
+// import DemoColumn from './admindashboard/DemoColumn';
 const { Header, Content, Footer, Sider } = Layout;
-import DemoLine from './admindashboard/DemoLine'
-import DemoRingProgress from './admindashboard/DemoRingProgress';
-import DemoRingUnprogress from './admindashboard/DemoRingUnprogress';
+// import DemoLine from './admindashboard/DemoLine'
+// import DemoRingProgress from './admindashboard/DemoRingProgress';
+// import DemoRingUnprogress from './admindashboard/DemoRingUnprogress';
 import { Col, Row } from 'antd';
 type Props = {}
 
@@ -23,18 +23,18 @@ const AdminDashboard = () => {
                 </Breadcrumb>
                 <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
                     <Row>
-                        <Col span={24}><DemoCard /></Col>
+                        {/* <Col span={24}><DemoCard /></Col> */}
                     </Row>
                     <Row className='item'>
-                        <Col className='item1' span={6}><DemoLine /></Col>
-                        <Col className='item1' span={6}><DemoChart /></Col>
-                        <Col className='item1' span={6}><DemoColumn /></Col>
+                        {/* <Col className='item1' span={6}><DemoLine /></Col>
+                        <Col className='item1' span={6}><DemoChart /></Col> */}
+                        {/* <Col className='item1' span={6}><DemoColumn /></Col> */}
                     </Row>
                     <Row className='item'>
-                        <Col span={6}><DemoRingProgress /></Col>
+                        {/* <Col span={6}><DemoRingProgress /></Col>
                         <Col span={6}><DemoRingUnprogress /></Col>
                         <Col span={6}><DemoRingProgress /></Col>
-                        <Col span={6}><DemoRingUnprogress /></Col>
+                        <Col span={6}><DemoRingUnprogress /></Col> */}
                     </Row>
                     <div style={{ padding: 14, float: 'right' }}>
                     </div>

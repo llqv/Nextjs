@@ -1,5 +1,4 @@
 import { Col, Layout, Row } from 'antd';
-import React from 'react';
 type Props = {}
 import styled from 'styled-components';
 import Image from 'next/image';

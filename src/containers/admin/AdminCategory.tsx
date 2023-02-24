@@ -1,8 +1,7 @@
 import { Breadcrumb, Layout, theme } from 'antd';
-import React from 'react';
 import AdminAddCategory from './admincategories/AdminAddCategory';
 import AdminListCategory from './admincategories/AdminListCategory';
-const { Header, Content, Footer, Sider } = Layout;
+const { Content} = Layout;
 type Props = {}
 
 const AdminCategory: React.FC = () => {

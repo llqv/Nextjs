@@ -1,6 +1,5 @@
 import { BellTwoTone, SettingTwoTone } from '@ant-design/icons';
 import { Input, Layout, theme } from 'antd';
-import React from 'react';
 const { Search } = Input;
 const { Header, Content, Footer, Sider } = Layout;
 

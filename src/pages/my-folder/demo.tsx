@@ -1,6 +1,4 @@
-import React from 'react'
 import useSWR from 'swr'
-import { IProduct } from '@/models/Product'
 type Props = {}
 const data = {
     name: "vu"

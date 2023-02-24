@@ -1,5 +1,4 @@
 import Login from '@/containers/authenticate/Login'
-import React from 'react'
 
 type Props = {}
 

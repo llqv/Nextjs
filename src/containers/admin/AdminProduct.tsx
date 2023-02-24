@@ -1,6 +1,5 @@
 import { Breadcrumb, Layout, theme } from 'antd';
-import React from 'react';
-import AdminAddProduct from './adminproducts/AdminAddProduct';
+
 import AdminListProduct from './adminproducts/AdminListProduct';
 const { Header, Content, Footer, Sider } = Layout;
 type Props = {}

@@ -1,27 +1,27 @@
-import { SearchOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Col, Input, Layout, Row } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import { Col, Input, Layout, Row } from 'antd';
 import Image from 'next/image';
-import React from 'react';
 import styled from 'styled-components';
+import AvatarImg from '../public/Avatar.png';
 import LogoImg from '../public/Logo.png';
 type Props = {}
-import AvatarImg from '../public/Avatar.png';
 const { Header, Footer, Sider, Content } = Layout;
 
-const headerStyle: React.CSSProperties = {
-    position: 'relative',
-    textAlign: 'center',
-    color: '#000000',
-    height: 80,
-    paddingInline: 50,
-    lineHeight: '64px',
-    backgroundColor: '#FFFFFF',
-}
+const HeaderStyle = styled.div `
+    position: 'relative';
+    text-align: center;
+    color: black;
+    height: 80px;
+    padding-inline: 50;
+    line-height: 64px;
+    background-color:#FFFFFF;
+`
 const StyleLogoImage = styled.div`
 float: right;
     margin-top: 8px;
     width: 138px;
     height: 41;
+
 `
 const StyleContent = styled.div`
 margin: 14;
@@ -77,7 +77,7 @@ flex-grow: 0;
 const HomeHeader = (props: Props) => {
     return (
         <>
-            <Header style={headerStyle}>
+            <HeaderStyle>
                 <Row>
                     <Col span={4}>
                         <StyleLogoImage>
@@ -108,7 +108,7 @@ const HomeHeader = (props: Props) => {
                         </StyleContent>
                     </Col>
                 </Row>
-            </Header>
+            </HeaderStyle>
         </>
     )
 }

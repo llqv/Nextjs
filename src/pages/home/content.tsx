@@ -33,7 +33,7 @@ const { Header, Footer, Sider, Content } = Layout;
 const ContentStyle = styled.div`
     width: 100%;
     max-width: 800;
-    padding : 20px 100px 0px 80px;
+    padding : 20px 20px 0px 20px;
     min-height: 120;
     height: 1700;
     color: '#fff';
@@ -54,10 +54,13 @@ box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.
 const StyleFormContent = styled.div`
 /* padding : top | right | bottom | left */
     padding-top: 4px;
+
 `
 const StyleContentProduct = styled.div`
 width: 100%;
 max-width: 258px;
+min-width: 172px;
+min-height: 312px;
 height: 390px;
     margin-left: 10px;
     font-family: 'Gilroy';
@@ -65,17 +68,15 @@ height: 390px;
 `
 const Styleh1 = styled.div`
 /* Peppo restaurant */
-width: 226px;
-height: 32px;
+width: 100%;
+max-width: 226px;
 margin-bottom: 20px;
 
 /* H4 */
-align-items: flex-start;
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 700;
 font-size: 24px;
-line-height: 32px;
 /* identical to box height, or 133% */
 
 
@@ -84,13 +85,11 @@ color: #000000;
 
 /* Inside auto layout */
 
-flex: none;
-order: 0;
-flex-grow: 0;
+
 `
 const StyledAdressContent = styled.div`
 /* 12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km) */
-
+width:100%;
 align-items: flex-start;
 /* Note 12 */
 
@@ -105,15 +104,14 @@ color: #000000;
 
 /* Inside auto layout */
 
-flex: none;
-order: 1;
-flex-grow: 1;
+
 `
 const StyleStatus = styled.div`
 /* Đang mở cửa */
 margin-top: 10px;
 align-items: flex-start;
-width: 200px;
+width: 100%;
+max-width: 200px;
 height: 20px;
 
 /* Note 12 */
@@ -131,16 +129,13 @@ align-items: center;
 color: #1DAC0E;
 
 
-/* Inside auto layout */
 
-flex: none;
-order: 1;
-flex-grow: 1;
+
 `
 const StyleTime = styled.div`
 /* Frame 62 */
 
-
+width:100%;
 /* Auto layout */
 margin-top: 10px;
 text-align: center;
@@ -153,32 +148,18 @@ margin-bottom: 30px;
 
 /* Inside auto layout */
 
-flex: none;
-order: 1;
-flex-grow: 0;
 `
 const StyleBooking = styled.div`
 /* Frame 24 */
 
-
 /* Auto layout */
-padding-left: 16px;
+width: 100%;
 display: flex;
 flex-direction: row;
-align-items: flex-end;
-place-content: center;
-
-gap: 77px;
-
-width: 226px;
+align-items: center;
+justify-content: space-between;
 height: 54px;
 
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
 `
 const HomeContent = (props: Props) => {
 
@@ -187,9 +168,9 @@ const HomeContent = (props: Props) => {
             <Row>
                 <StyleFormContent>
                     <Row gutter={[16, 16]}>
-                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }}>
+                        <Col span={8} xs={{ span: 12 }}  lg={{ span: 12 }} xl={{ span: 8 }}>
                             <Card
-                                style={{ width: 300, height: 390 }}
+                                style={{ width: '100%', maxWidth:320, height: '100%', minHeight:312 }}
                                 cover={
                                     <Image src={Product1Image} alt="" />
                                 }
@@ -230,9 +211,9 @@ const HomeContent = (props: Props) => {
 
                             </Card>
                         </Col>
-                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }}>
+                        <Col span={8} xs={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8 }}>
                             <Card
-                                style={{ width: 300, height: 390 }}
+                            style={{ width: '100%', maxWidth:320, height: '100%', minHeight:312 }}
                                 cover={
                                     <Image src={Product1Image} alt="" />
                                 }
@@ -273,9 +254,9 @@ const HomeContent = (props: Props) => {
 
                             </Card>
                         </Col>
-                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }}>
+                        <Col span={8} xs={{ span: 12 }}  lg={{ span: 12 }} xl={{ span: 8 }}>
                             <Card
-                                style={{ width: 300, height: 390 }}
+                                style={{ width: '100%', maxWidth:320, height: '100%', minHeight:312 }}
                                 cover={
                                     <Image src={Product1Image} alt="" />
                                 }

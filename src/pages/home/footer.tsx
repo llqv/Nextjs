@@ -11,6 +11,7 @@ import SubcribeImage from '../public/image 2.png'
 
 const footerStyle: React.CSSProperties = {
     paddingTop: 110,
+
     textAlign: 'center',
     color: '#fff',
     backgroundColor: 'white'

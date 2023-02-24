@@ -16,8 +16,9 @@ import VegetarianImage from '../public/vergetarian2.png';
 import VoucherImage from '../public/voucher.png';
 
 const StyleSidebar = styled.div`
+margin-left: 40px;
     padding-top: 10px;
-    margin-left: 100px;
+    padding-left: 10px;
     width: 100%;
     max-width: 258px;
     height: 1700px;
@@ -25,6 +26,9 @@ const StyleSidebar = styled.div`
     background: #FFFFFF;
     /* Navigation Menu Bar */
     box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+        @media screen and (max-width: 990px) {
+    display: none;
+  }
     ul{
         list-style: none;
         text-align: center;
@@ -48,11 +52,8 @@ const StyleSidebar = styled.div`
             }
         }
     }
-    /* @media screen and (max-width: 250px) {
-  .sidebar {
-    display: none;
-  }
-} */
+
+
 `
 const HomeSidebar = () => {
   return (

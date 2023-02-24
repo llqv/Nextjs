@@ -58,7 +58,7 @@ const StyleFormContent = styled.div`
 const StyleContentProduct = styled.div`
 width: 100%;
 max-width: 258px;
-height: 400px;
+height: 390px;
     margin-left: 10px;
     font-family: 'Gilroy';
     font-style: normal;
@@ -92,8 +92,6 @@ const StyledAdressContent = styled.div`
 /* 12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km) */
 
 align-items: flex-start;
-width: 200px;
-height: 28px;
 /* Note 12 */
 
 font-family: 'Gilroy';
@@ -145,15 +143,13 @@ const StyleTime = styled.div`
 
 /* Auto layout */
 margin-top: 10px;
-align-items: flex-start;
+text-align: center;
 display: flex;
 flex-direction: row;
 padding: 0px;
 gap: 26px;
 
-width: 200px;
-height: 18px;
-margin-bottom: 40px;
+margin-bottom: 30px;
 
 /* Inside auto layout */
 
@@ -191,7 +187,7 @@ const HomeContent = (props: Props) => {
             <Row>
                 <StyleFormContent>
                     <Row gutter={[16, 16]}>
-                        <Col span={8}>
+                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }}>
                             <Card
                                 style={{ width: 300, height: 390 }}
                                 cover={
@@ -202,17 +198,30 @@ const HomeContent = (props: Props) => {
                                     Peppo Restaurant
                                 </Styleh1>
                                 <StyledAdressContent>
-                                    <Image style={{ marginRight: 8 }} src={AddressImage} alt="" />
-                                    12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)
+                                    <Row>
+                                        <Col span={2}>
+                                            <Image src={AddressImage} alt="" />
+                                        </Col>
+                                        <Col span={22}>
+                                            12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)
+                                        </Col>
+                                    </Row>
                                 </StyledAdressContent>
                                 <StyleStatus>
                                     <Image style={{ marginRight: 8 }} src={StatusStoreImage} alt="" />
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                <Image src={TimeImage} alt="" />
-                                <Image src={TimeStartImage} alt="" />
-                                <Image src={TimeEndImage} alt="" />
+                                <Row>                                
+                                        <Image src={TimeImage} alt="" />                              
+                                        <Col style={{marginLeft:6}} span={10}>
+                                        <Image src={TimeStartImage} alt="" />
+                                        </Col>
+                                        <Col span={10}>
+                                        <Image  style={{marginLeft:18}} src={TimeEndImage} alt="" />
+                                        </Col>
+                                    </Row>
+                                  
                                 </StyleTime>
                                 <StyleBooking>
                                     <Image src={DeliveryImage} alt="" />
@@ -221,41 +230,94 @@ const HomeContent = (props: Props) => {
 
                             </Card>
                         </Col>
-                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }} >
+                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }}>
                             <Card
-                                style={{ width: 300 }}
+                                style={{ width: 300, height: 390 }}
                                 cover={
-                                    <img
-                                        alt="example"
-                                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                                    />
+                                    <Image src={Product1Image} alt="" />
                                 }
                             >
-                                <Meta
-                                    avatar={<Avatar src="https://joesch.moe/api/v1/random" />}
-                                    title="Card title"
-                                    description="This is the description"
-                                />
+                                <Styleh1>
+                                    Peppo Restaurant
+                                </Styleh1>
+                                <StyledAdressContent>
+                                    <Row>
+                                        <Col span={2}>
+                                            <Image src={AddressImage} alt="" />
+                                        </Col>
+                                        <Col span={22}>
+                                            12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)
+                                        </Col>
+                                    </Row>
+                                </StyledAdressContent>
+                                <StyleStatus>
+                                    <Image style={{ marginRight: 8 }} src={StatusStoreImage} alt="" />
+                                    Đang mở cửa
+                                </StyleStatus>
+                                <StyleTime>
+                                <Row>                                
+                                        <Image src={TimeImage} alt="" />                              
+                                        <Col style={{marginLeft:6}} span={10}>
+                                        <Image src={TimeStartImage} alt="" />
+                                        </Col>
+                                        <Col span={10}>
+                                        <Image  style={{marginLeft:18}} src={TimeEndImage} alt="" />
+                                        </Col>
+                                    </Row>
+                                  
+                                </StyleTime>
+                                <StyleBooking>
+                                    <Image src={DeliveryImage} alt="" />
+                                    <Image src={BookingImage} alt="" />
+                                </StyleBooking>
+
                             </Card>
                         </Col>
-                        <Col span={8}>
+                        <Col span={8} xs={{ span: 24 }} md={{ span: 16 }} lg={{ span: 8 }}>
                             <Card
-                                style={{ width: 300 }}
+                                style={{ width: 300, height: 390 }}
                                 cover={
-                                    <img
-                                        alt="example"
-                                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                                    />
+                                    <Image src={Product1Image} alt="" />
                                 }
                             >
-                                <Meta
-                                    avatar={<Avatar src="https://joesch.moe/api/v1/random" />}
-                                    title="Card title"
-                                    description="This is the description"
-                                />
+                                <Styleh1>
+                                    Peppo Restaurant
+                                </Styleh1>
+                                <StyledAdressContent>
+                                    <Row>
+                                        <Col span={2}>
+                                            <Image src={AddressImage} alt="" />
+                                        </Col>
+                                        <Col span={22}>
+                                            12, Pham Ngoc Thach st, Dong Da dist, Ha Noi (0.3 km)
+                                        </Col>
+                                    </Row>
+                                </StyledAdressContent>
+                                <StyleStatus>
+                                    <Image style={{ marginRight: 8 }} src={StatusStoreImage} alt="" />
+                                    Đang mở cửa
+                                </StyleStatus>
+                                <StyleTime>
+                                <Row>                                
+                                        <Image src={TimeImage} alt="" />                              
+                                        <Col style={{marginLeft:6}} span={10}>
+                                        <Image src={TimeStartImage} alt="" />
+                                        </Col>
+                                        <Col span={10}>
+                                        <Image  style={{marginLeft:18}} src={TimeEndImage} alt="" />
+                                        </Col>
+                                    </Row>
+                                  
+                                </StyleTime>
+                                <StyleBooking>
+                                    <Image src={DeliveryImage} alt="" />
+                                    <Image src={BookingImage} alt="" />
+                                </StyleBooking>
+
                             </Card>
                         </Col>
                     </Row>
+                    
                 </StyleFormContent>
             </Row >
         </ContentStyle >

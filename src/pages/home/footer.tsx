@@ -17,11 +17,11 @@ const footerStyle: React.CSSProperties = {
 };
 const StyleContentFooter = styled.div`
    font-family: 'Gilroy';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 16px;
-color :black;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+    color :black;
 
 `
 const StyleItemContent = styled.div`
@@ -36,35 +36,35 @@ const StyleItemContent = styled.div`
 }
 `
 const StyleItemContentCompany = styled.div`
-font-family: 'Gilroy';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 22px;
-ul{
-    list-style: none;
-}
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    ul{
+        list-style: none;
+    }
 /* identical to box height, or 157% */
-align-items: center;
-text-align: right;
+    align-items: center;
+    text-align: right;
 
-color: #000000;
+    color: #000000;
 `
 const StyleLogoFooter = styled.div`
-width: max-content;
-padding-top: 50px;
+    width: max-content;
+    padding-top: 50px;
     margin: auto;
     color: black;
 
-font-family: 'Gilroy';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 12px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 12px;
 
-align-items: center;
-letter-spacing: -0.01em;
-color: #828282;
+    align-items: center;
+    letter-spacing: -0.01em;
+    color: #828282;
 `
 const StyleOperatingSystem = styled.div`
     padding-top: 25px;

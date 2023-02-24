@@ -7,7 +7,7 @@ import LogoImg from '../public/Logo.png';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
-const HeaderStyle = styled.div `
+const HeaderStyle = styled.div`
     position: 'relative';
     text-align: center;
     color: black;
@@ -17,24 +17,24 @@ const HeaderStyle = styled.div `
     background-color:#FFFFFF;
 `
 const StyleLogoImage = styled.div`
-float: right;
+    float: right;
     margin-top: 8px;
     width: 138px;
     height: 41;
 
 `
 const StyleContent = styled.div`
-margin: 14;
+    margin: 14;
 `
 const StyleAvatar = styled.div`
-width: 32;
-height: 32;
+    width: 32;
+    height: 32;
 
 `
 const StyleButtonAddress = styled.button`
-width: 74px;
-height: 34px;
-background-color: #FFFFFF;
+    width: 74px;
+    height: 34px;
+    background-color: #FFFFFF;
     border-radius:10px;
     border: 1px solid #FCDAB0;
 `
@@ -52,27 +52,27 @@ const StyleButtonOrder = styled.button`
     line-height: 24px;
 `
 const StyleButtonLanguage = styled.button`
-width: 74px;
-height: 34px;
-background-color: #FFFFFF;
+    width: 74px;
+    height: 34px;
+    background-color: #FFFFFF;
     border-radius:10px;
     border: 1px solid #FCDAB0;
 `
 const StyleLogin = styled.p`
-padding-top:13px;
-text-decoration: underline;
-width: 63px;
-height: 16px;
-font-family: 'Gilroy';
-font-style: normal;
-font-weight: 700;
-font-size: 13px;
-line-height: 16px;
-text-align: center;
-color: #007AFF;
-flex: none;
-order: 0;
-flex-grow: 0;
+    padding-top:13px;
+    text-decoration: underline;
+    width: 63px;
+    height: 16px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #007AFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 `
 const HomeHeader = (props: Props) => {
     return (

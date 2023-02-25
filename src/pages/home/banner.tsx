@@ -1,19 +1,23 @@
 import { Carousel, Layout } from 'antd';
 import Image from 'next/image';
-import BannerImg from '../public/Banner.jpg';
+import BannerImg from '../Banner.jpg';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
+import styled from 'styled-components';
 
-interface content { }
-interface formcontent { }
 
-const bannerStyle: React.CSSProperties = {
-    position: 'relative',
-    marginTop: 4,
-    color: '#fff',
-    textAlign: 'center',
-    background: '#FFFFFF',
-};
+const BannerStyle = styled.div `
+    position: relative;
+    margin-top :4px;
+    text-align: center;
+    background: '#FFFFFF';
+    .banner-img {
+        margin: auto;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+`
 
 const HomeBanner = (props: Props) => {
     const onChange = (currentSlide: number) => {
@@ -21,16 +25,16 @@ const HomeBanner = (props: Props) => {
     };
 
     return (
-        <>
-            <Layout style={bannerStyle}>
+        <BannerStyle>
+            <Layout>
                 <Carousel afterChange={onChange}>
                     <div>
-                        <Image style={{ margin: 'auto', objectFit:'cover', width:'100%', height:'100%'}} src={BannerImg} alt="" />
+                        <Image className='banner-img' src={BannerImg} alt="" />
                     </div>
                 </Carousel>
                 <Layout />
             </Layout>
-        </>
+        </BannerStyle>
     )
 }
 

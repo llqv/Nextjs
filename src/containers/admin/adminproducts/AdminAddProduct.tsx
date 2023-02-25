@@ -143,7 +143,6 @@ const AdminAddProduct = ({ resetdata }: { resetdata: any }) => {
                     setOpen(false);
                 }}
                 onnotification={onnotification}
-
             />
         </div>
     );

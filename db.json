@@ -44,11 +44,12 @@
       "category": "Category 3"
     },
     {
-      "id": 8,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
+      "name": "432",
+      "price": 432,
+      "quantity": 432,
+      "category": "category 2",
+      "description": "432432432",
+      "id": 84
     }
   ],
   "categories": [

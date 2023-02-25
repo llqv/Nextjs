@@ -2,38 +2,38 @@ import { Card, Col, Layout, Row, Avatar } from 'antd';
 const { Meta } = Card;
 import Image from 'next/image';
 import styled from 'styled-components';
-import AddressImage from '../public/address.png';
-import AllProductImage from '../public/all.png';
-import DeliveryImage from '../public/Button.png';
-import ChineseFoodImage from '../public/chinese.png';
-import CoffeeImage from '../public/coffee.png';
-import FastFoodImage from '../public/fastfood.png';
-import TimeStartImage from '../public/Frame 60.png';
-import TimeEndImage from '../public/Frame 61.png';
-import FreeshipImage from '../public/freeship.png';
-import GiftImage from '../public/gift.png';
-import BookingImage from '../public/Group 47.png';
-import JapaneseFoodImage from '../public/japanese.png';
-import MilkImage from '../public/milk.png';
-import TakeAwayImage from '../public/package.png';
-import PizzaImage from '../public/pizza.png';
-import Product1Image from '../public/product1.png';
-import Product2Image from '../public/product2.png';
-import Product3Image from '../public/product3.png';
-import Product4Image from '../public/product4.png';
-import Product5Image from '../public/product5.png';
-import SweetImage from '../public/sweet.png';
-import TimeImage from '../public/time.png';
-import StatusStoreImage from '../public/Vector.png';
-import VegetarianImage from '../public/vergetarian2.png';
-import VoucherImage from '../public/voucher.png';
+import AddressImage from '../address.png';
+import AllProductImage from '../all.png';
+import DeliveryImage from '../Button.png';
+import ChineseFoodImage from '../chinese.png';
+import CoffeeImage from '../coffee.png';
+import FastFoodImage from '../fastfood.png';
+import TimeStartImage from '../Frame 60.png';
+import TimeEndImage from '../Frame 61.png';
+import FreeshipImage from '../freeship.png';
+import GiftImage from '../gift.png';
+import BookingImage from '../Group 47.png';
+import JapaneseFoodImage from '../japanese.png';
+import MilkImage from '../milk.png';
+import TakeAwayImage from '../package.png';
+import PizzaImage from '../pizza.png';
+import Product1Image from '../product1.png';
+import Product2Image from '../product2.png';
+import Product3Image from '../product3.png';
+import Product4Image from '../product4.png';
+import Product5Image from '../product5.png';
+import SweetImage from '../sweet.png';
+import TimeImage from '../time.png';
+import StatusStoreImage from '../Vector.png';
+import VegetarianImage from '../vergetarian2.png';
+import VoucherImage from '../voucher.png';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
 const ContentStyle = styled.div`
     width: 100%;
     max-width: 800;
-    padding : 20px 20px 0px 20px;
+    padding : 20px 20px 0px 80px;
     min-height: 120;
     height: 1700;
     color: '#fff';
@@ -54,6 +54,12 @@ box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.
 const StyleFormContent = styled.div`
 /* padding : top | right | bottom | left */
     padding-top: 4px;
+    .card-form {
+        width: 100%;
+        max-width: 300px;
+        height: 100%;
+        min-height: 312px;
+    }
 
 `
 const StyleContentProduct = styled.div`
@@ -127,7 +133,9 @@ align-items: center;
 /* status/6 */
 
 color: #1DAC0E;
-
+.status-store {
+    margin-right: 8px;
+}
 
 
 
@@ -147,18 +155,29 @@ gap: 26px;
 margin-bottom: 30px;
 
 /* Inside auto layout */
-
+.time-start-image{
+    margin-left: 6px;
+}
+.time-end-img{
+    margin-left: 18px;
+}
 `
 const StyleBooking = styled.div`
 /* Frame 24 */
 
 /* Auto layout */
-width: 100%;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-height: 54px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    .delivery-img{
+        object-fit: cover;
+    }
+    .booking-img{
+        object-fit: cover;
+    }
 
 `
 const HomeContent = (props: Props) => {
@@ -168,9 +187,8 @@ const HomeContent = (props: Props) => {
             <Row>
                 <StyleFormContent>
                     <Row gutter={[16, 16]}>
-                        <Col span={8} xs={{ span: 12 }}  lg={{ span: 12 }} xl={{ span: 8 }}>
-                            <Card
-                                style={{ width: '100%', maxWidth:320, height: '100%', minHeight:312 }}
+                        <Col span={8} xs={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8 }}>
+                            <Card className='card-form'
                                 cover={
                                     <Image src={Product1Image} alt="" />
                                 }
@@ -189,31 +207,30 @@ const HomeContent = (props: Props) => {
                                     </Row>
                                 </StyledAdressContent>
                                 <StyleStatus>
-                                    <Image style={{ marginRight: 8 }} src={StatusStoreImage} alt="" />
+                                    <Image className='status-store' src={StatusStoreImage} alt="" />
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                <Row>                                
-                                        <Image src={TimeImage} alt="" />                              
-                                        <Col style={{marginLeft:6}} span={10}>
-                                        <Image src={TimeStartImage} alt="" />
+                                    <Row>
+                                        <Image src={TimeImage} alt="" />
+                                        <Col className='time-start-image' span={10}>
+                                            <Image src={TimeStartImage} alt="" />
                                         </Col>
                                         <Col span={10}>
-                                        <Image  style={{marginLeft:18}} src={TimeEndImage} alt="" />
+                                            <Image className='time-end-img' src={TimeEndImage} alt="" />
                                         </Col>
                                     </Row>
-                                  
+
                                 </StyleTime>
                                 <StyleBooking>
-                                    <Image src={DeliveryImage} alt="" />
-                                    <Image src={BookingImage} alt="" />
+                                    <Image className='delivery-img' src={DeliveryImage} alt="" />
+                                    <Image className='booking-img' src={BookingImage} alt="" />
                                 </StyleBooking>
 
                             </Card>
                         </Col>
                         <Col span={8} xs={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8 }}>
-                            <Card
-                            style={{ width: '100%', maxWidth:320, height: '100%', minHeight:312 }}
+                            <Card className='card-form'
                                 cover={
                                     <Image src={Product1Image} alt="" />
                                 }
@@ -232,31 +249,30 @@ const HomeContent = (props: Props) => {
                                     </Row>
                                 </StyledAdressContent>
                                 <StyleStatus>
-                                    <Image style={{ marginRight: 8 }} src={StatusStoreImage} alt="" />
+                                    <Image className='status-store' src={StatusStoreImage} alt="" />
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                <Row>                                
-                                        <Image src={TimeImage} alt="" />                              
-                                        <Col style={{marginLeft:6}} span={10}>
-                                        <Image src={TimeStartImage} alt="" />
+                                    <Row>
+                                        <Image src={TimeImage} alt="" />
+                                        <Col className='time-start-image' span={10}>
+                                            <Image src={TimeStartImage} alt="" />
                                         </Col>
                                         <Col span={10}>
-                                        <Image  style={{marginLeft:18}} src={TimeEndImage} alt="" />
+                                            <Image className='time-end-img' src={TimeEndImage} alt="" />
                                         </Col>
                                     </Row>
-                                  
+
                                 </StyleTime>
                                 <StyleBooking>
-                                    <Image src={DeliveryImage} alt="" />
-                                    <Image src={BookingImage} alt="" />
+                                    <Image className='delivery-img' src={DeliveryImage} alt="" />
+                                    <Image className='booking-img' src={BookingImage} alt="" />
                                 </StyleBooking>
 
                             </Card>
                         </Col>
-                        <Col span={8} xs={{ span: 12 }}  lg={{ span: 12 }} xl={{ span: 8 }}>
-                            <Card
-                                style={{ width: '100%', maxWidth:320, height: '100%', minHeight:312 }}
+                        <Col span={8} xs={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8 }}>
+                            <Card className='card-form'
                                 cover={
                                     <Image src={Product1Image} alt="" />
                                 }
@@ -275,30 +291,31 @@ const HomeContent = (props: Props) => {
                                     </Row>
                                 </StyledAdressContent>
                                 <StyleStatus>
-                                    <Image style={{ marginRight: 8 }} src={StatusStoreImage} alt="" />
+                                    <Image className='status-store' src={StatusStoreImage} alt="" />
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                <Row>                                
-                                        <Image src={TimeImage} alt="" />                              
-                                        <Col style={{marginLeft:6}} span={10}>
-                                        <Image src={TimeStartImage} alt="" />
+                                    <Row>
+                                        <Image src={TimeImage} alt="" />
+                                        <Col className='time-start-image' span={10}>
+                                            <Image src={TimeStartImage} alt="" />
                                         </Col>
                                         <Col span={10}>
-                                        <Image  style={{marginLeft:18}} src={TimeEndImage} alt="" />
+                                            <Image className='time-end-img' src={TimeEndImage} alt="" />
                                         </Col>
                                     </Row>
-                                  
+
                                 </StyleTime>
                                 <StyleBooking>
-                                    <Image src={DeliveryImage} alt="" />
-                                    <Image src={BookingImage} alt="" />
+                                    <Image className='delivery-img' src={DeliveryImage} alt="" />
+                                    <Image className='booking-img' src={BookingImage} alt="" />
                                 </StyleBooking>
 
                             </Card>
                         </Col>
+
                     </Row>
-                    
+
                 </StyleFormContent>
             </Row >
         </ContentStyle >

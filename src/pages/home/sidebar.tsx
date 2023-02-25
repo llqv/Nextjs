@@ -1,19 +1,19 @@
 import { Col } from 'antd';
 import Image from 'next/image';
 import styled from 'styled-components';
-import AllProductImage from '../public/all.png';
-import ChineseFoodImage from '../public/chinese.png';
-import CoffeeImage from '../public/coffee.png';
-import FastFoodImage from '../public/fastfood.png';
-import FreeshipImage from '../public/freeship.png';
-import GiftImage from '../public/gift.png';
-import JapaneseFoodImage from '../public/japanese.png';
-import MilkImage from '../public/milk.png';
-import TakeAwayImage from '../public/package.png';
-import PizzaImage from '../public/pizza.png';
-import SweetImage from '../public/sweet.png';
-import VegetarianImage from '../public/vergetarian2.png';
-import VoucherImage from '../public/voucher.png';
+import AllProductImage from '../all.png';
+import ChineseFoodImage from '../chinese.png';
+import CoffeeImage from '../coffee.png';
+import FastFoodImage from '../fastfood.png';
+import FreeshipImage from '../freeship.png';
+import GiftImage from '../gift.png';
+import JapaneseFoodImage from '../japanese.png';
+import MilkImage from '../milk.png';
+import TakeAwayImage from '../package.png';
+import PizzaImage from '../pizza.png';
+import SweetImage from '../sweet.png';
+import VegetarianImage from '../vergetarian2.png';
+import VoucherImage from '../voucher.png';
 
 const StyleSidebar = styled.div`
 margin-left: 40px;

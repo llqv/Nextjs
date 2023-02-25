@@ -3,19 +3,18 @@ type Props = {}
 import styled from 'styled-components';
 import Image from 'next/image';
 const { Header, Footer, Sider, Content } = Layout;
-import IosImage from '../public/Group 62.png'
-import AndroidImage from '../public/Group 63.png'
-import LogoImg from '../public/LogoFooter.png';
-import SocialNetWorkImage from '../public/Group 61.png'
-import SubcribeImage from '../public/image 2.png'
+import IosImage from '../Group 62.png'
+import AndroidImage from '../Group 63.png'
+import LogoImg from '../LogoFooter.png';
+import SocialNetWorkImage from '../Group 61.png'
+import SubcribeImage from '../image 2.png'
 
-const footerStyle: React.CSSProperties = {
-    paddingTop: 110,
-
-    textAlign: 'center',
-    color: '#fff',
-    backgroundColor: 'white'
-};
+const FooterStyle =styled.div `
+    padding-top: 110px;
+    text-align: center;
+    color: #fff;
+    background-color: white;
+`
 const StyleContentFooter = styled.div`
    font-family: 'Gilroy';
     font-style: normal;
@@ -32,6 +31,7 @@ const StyleItemContent = styled.div`
     font-size: 14px;
     line-height: 22px;
     color: #2E92FF;
+    text-align:left;
     ul{
     list-style: none;
 }
@@ -74,7 +74,7 @@ const HomeFooter = (props: Props) => {
 
     return (
         <>
-            <Footer style={footerStyle}>
+            <FooterStyle>
                 <Row>
                     <Col span={4}>
                         <StyleContentFooter>Công ty</StyleContentFooter>
@@ -123,7 +123,7 @@ const HomeFooter = (props: Props) => {
                         </StyleItemContentCompany>
                     </Col>
                 </Row>
-            </Footer>
+            </FooterStyle>
         </>
     )
 }

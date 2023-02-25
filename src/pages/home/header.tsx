@@ -2,8 +2,8 @@ import { SearchOutlined } from '@ant-design/icons';
 import { Col, Input, Layout, Row, Select } from 'antd';
 import Image from 'next/image';
 import styled from 'styled-components';
-import AvatarImg from '../public/Avatar.png';
-import LogoImg from '../public/Logo.png';
+import AvatarImg from '../Avatar.png';
+import LogoImg from '../Logo.png';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -16,6 +16,22 @@ const HeaderStyleDesktop = styled.div`
     background-color:#FFFFFF;
     @media screen and (max-width: 1100px) { 
         display: none;
+    }
+    .avatar {
+        margin-top: 17px;
+    }
+    .input-type{
+        border: 1px solid #FCDAB0 ;
+        
+    }
+    .logo-img{
+        margin-top: 14px;
+    }
+    .select-options-region {
+        width: 100px;
+    }
+    .select-options-language{
+        width: 80px;
     }
 `
 
@@ -35,9 +51,9 @@ const StyleContent = styled.div`
 `
 
 const StyleButtonAddress = styled.button`
-position: absolute;
-top: 21px;
-right: 5px;
+    position: absolute;
+    top: 21px;
+    right: 5px;
     width: 74px;
     height: 34px;
     background-color: #FFFFFF;
@@ -86,12 +102,11 @@ const HomeHeader = (props: Props) => {
             <HeaderStyleDesktop>
                 <Row >
                     <Col span={4}>
-                        <Image src={LogoImg} alt="" />
+                        <Image className='logo-img' src={LogoImg} alt="" />
                     </Col>
                     <Col span={4}>
-                        <Select
+                        <Select className='select-options-region'
                             defaultValue="HaNoi"
-                            style={{ width: 120}}
                             options={[
                                 { value: 'HCM', label: 'HCM' },
                                 { value: 'HCM', label: 'HCM' },
@@ -101,28 +116,28 @@ const HomeHeader = (props: Props) => {
                         />
                     </Col>
                     <Col span={9}>
-                        <Input
-                            style={{border: '1px solid #FCDAB0'}}
+                        <Input className='input-type'
                             placeholder="Nhập từ khoá"
                             prefix={<SearchOutlined />} />
                     </Col>
                     <Col span={6}>
                         <Row gutter={[16, 16]}>
-                            <Col span={12}><StyleButtonOrder>Order</StyleButtonOrder></Col>
-                            <Col span={6}>
-                            <Select
-                            defaultValue="EN"
-                            style={{ width: 70}}
-                            options={[
-                                { value: 'EN', label: 'EN' },
-                                { value: 'HCM', label: 'HCM' },
-                                { value: 'HCM', label: 'HCM' },
-                                { value: 'HCM', label: 'HCM', disabled: true },
-                            ]}
-                        />
+                            <Col span={12}>
+                                <StyleButtonOrder>Order</StyleButtonOrder>
                             </Col>
                             <Col span={6}>
-                                <Image style={{ marginTop: 17 }} src={AvatarImg} alt="" />
+                                <Select className='select-options-language'
+                                    defaultValue="EN"
+                                    options={[
+                                        { value: 'EN', label: 'EN' },
+                                        { value: 'HCM', label: 'HCM' },
+                                        { value: 'HCM', label: 'HCM' },
+                                        { value: 'HCM', label: 'HCM', disabled: true },
+                                    ]}
+                                />
+                            </Col>
+                            <Col span={6}>
+                                <Image className='avatar' src={AvatarImg} alt="" />
                             </Col>
                         </Row>
                     </Col>

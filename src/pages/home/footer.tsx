@@ -10,7 +10,7 @@ import SocialNetWorkImage from '../Group 61.png'
 import SubcribeImage from '../image 2.png'
 
 const FooterStyle =styled.div `
-    padding-top: 110px;
+    padding-top: 11rem;
     text-align: center;
     color: #fff;
     background-color: white;
@@ -19,8 +19,8 @@ const StyleContentFooter = styled.div`
    font-family: 'Gilroy';
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 16px;
+    font-size: 1.8rem;
+    line-height: 1.6rem;
     color :black;
 
 `
@@ -28,8 +28,8 @@ const StyleItemContent = styled.div`
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
     color: #2E92FF;
     text-align:left;
     ul{
@@ -40,8 +40,8 @@ const StyleItemContentCompany = styled.div`
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
     ul{
         list-style: none;
     }
@@ -53,22 +53,22 @@ const StyleItemContentCompany = styled.div`
 `
 const StyleLogoFooter = styled.div`
     width: max-content;
-    padding-top: 50px;
+    padding-top: 5rem;
     margin: auto;
     color: black;
 
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 12px;
+    font-size: 1.6rem;
+    line-height: 1.2rem;
 
     align-items: center;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.01rem;
     color: #828282;
 `
 const StyleOperatingSystem = styled.div`
-    padding-top: 25px;
+    padding-top: 2.5rem;
 `
 const HomeFooter = (props: Props) => {
 

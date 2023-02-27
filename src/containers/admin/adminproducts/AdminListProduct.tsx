@@ -30,13 +30,24 @@ const AdminListProduct = (props: Props) => {
         setData(data.filter((item) => item.id !== id));
     };
 
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const result = await axios.get('http://localhost:3100/products');
+    //         setData(result.data);
+    //     };
+    //     fetchData();
+    // }, []);
     useEffect(() => {
         const fetchData = async () => {
+          try {
             const result = await axios.get('http://localhost:3100/products');
-            setData(result.data);
-        };
-        fetchData();
-    }, []);
+            setData(result.data);          
+          } catch (e) {
+          }
+  
+        }
+        fetchData()
+      }, []);
 
     return (
         <>

@@ -27,24 +27,28 @@ import TimeImage from '../time.png';
 import StatusStoreImage from '../Vector.png';
 import VegetarianImage from '../vergetarian2.png';
 import VoucherImage from '../voucher.png';
+import '../../../src/assets/css/styles.scss'
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
 const ContentStyle = styled.div`
     width: 100%;
-    max-width: 800;
-    padding : 20px 20px 0px 80px;
+    max-width: 700;
+    padding : 0.2rem 0.2rem 0px 0.8rem;
     min-height: 120;
     height: 1700;
     color: '#fff';
+    @media screen and (max-width : 990px) {
+        padding : 0.2rem 0px 0px 0px;
+    }
 `
 const StyleContent = styled.div`
 width: 100%;
-margin-left: 40px;
-margin-bottom: 50px;
-max-width: 258px;
-height: 369px;
-border-radius: 10px;
+margin-left: 0.4rem;
+margin-bottom: 0.5rem;
+max-width: 2.58rem;
+height: 3.69rem;
+border-radius: 0.1rem;
 background: white;
 color: black;
 font-family: 'Gilroy';
@@ -53,36 +57,36 @@ box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.
 `
 const StyleFormContent = styled.div`
 /* padding : top | right | bottom | left */
-    padding-top: 4px;
+    padding-top: 0.4rem;
     .card-form {
         width: 100%;
-        max-width: 300px;
+        max-width: 30rem;
         height: 100%;
-        min-height: 312px;
+        min-height: 3.12rem;
     }
 
 `
 const StyleContentProduct = styled.div`
 width: 100%;
-max-width: 258px;
-min-width: 172px;
-min-height: 312px;
-height: 390px;
-    margin-left: 10px;
+max-width: 2.58rem;
+min-width: 1.72rem;
+min-height: 3.12rem;
+height: 3.9rem;
+    margin-left: 0.1rem;
     font-family: 'Gilroy';
     font-style: normal;
 `
 const Styleh1 = styled.div`
 /* Peppo restaurant */
 width: 100%;
-max-width: 226px;
-margin-bottom: 20px;
+max-width: 2.26rem;
+margin-bottom: 2rem;
 
 /* H4 */
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 700;
-font-size: 24px;
+font-size: 2.4rem;
 /* identical to box height, or 133% */
 
 
@@ -102,8 +106,8 @@ align-items: flex-start;
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 400;
-font-size: 14px;
-line-height: 14px;
+font-size: 1.4rem;
+line-height: 1.4rem;
 
 color: #000000;
 
@@ -114,19 +118,19 @@ color: #000000;
 `
 const StyleStatus = styled.div`
 /* Đang mở cửa */
-margin-top: 10px;
+margin-top: 1rem;
 align-items: flex-start;
 width: 100%;
-max-width: 200px;
-height: 20px;
+max-width: 20rem;
+height: 2rem;
 
 /* Note 12 */
 
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 400;
-font-size: 14px;
-line-height: 14px;
+font-size: 1.4rem;
+line-height: 1.4rem;
 display: flex;
 align-items: center;
 
@@ -134,7 +138,7 @@ align-items: center;
 
 color: #1DAC0E;
 .status-store {
-    margin-right: 8px;
+    margin-right: 0.8rem;
 }
 
 
@@ -145,21 +149,21 @@ const StyleTime = styled.div`
 
 width:100%;
 /* Auto layout */
-margin-top: 10px;
+margin-top: 1rem;
 text-align: center;
 display: flex;
 flex-direction: row;
 padding: 0px;
-gap: 26px;
+gap: 2.6rem;
 
-margin-bottom: 30px;
+margin-bottom: 3rem;
 
 /* Inside auto layout */
 .time-start-image{
-    margin-left: 6px;
+    margin-left: 0.6rem;
 }
 .time-end-img{
-    margin-left: 18px;
+    margin-left: 1.8rem;
 }
 `
 const StyleBooking = styled.div`
@@ -171,7 +175,7 @@ const StyleBooking = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    height: 4rem;
     .delivery-img{
         object-fit: cover;
     }

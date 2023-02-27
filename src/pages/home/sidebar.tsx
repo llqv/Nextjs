@@ -14,14 +14,15 @@ import PizzaImage from '../pizza.png';
 import SweetImage from '../sweet.png';
 import VegetarianImage from '../vergetarian2.png';
 import VoucherImage from '../voucher.png';
+import '../../../src/assets/css/styles.scss'
 
 const StyleSidebar = styled.div`
-    margin-left: 40px;
-    padding-top: 10px;
-    padding-left: 10px;
+    margin-left: 4rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
     width: 100%;
-    max-width: 258px;
-    height: 1700px;
+    max-width: 25.8rem;
+    height: 170rem;
     /* bg/2 */
     background: #FFFFFF;
     /* Navigation Menu Bar */
@@ -34,21 +35,21 @@ const StyleSidebar = styled.div`
         text-align: center;
         li {
             display: flex;
-            padding-bottom: 20px;
+            padding-bottom: 2rem;
             color: black;
             text-align: left;
             font-family: 'Gilroy';
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
             color: #000000;
             flex: none;
             order: 1;
             flex-grow: 1;
             a{
                 text-align: center;
-                margin-right: 10px;
+                margin-right: 1rem;
             }
         }
     }
@@ -92,7 +93,7 @@ const StyleSidebarMobile = styled.div`
 const HomeSidebar = () => {
     return (
         <>
-            {/* <StyleSidebar>
+            <StyleSidebar>
                 <ul>
                     <li><a href=""> <Image src={AllProductImage} alt="" /></a>
                         All
@@ -134,8 +135,8 @@ const HomeSidebar = () => {
                         Freeship
                     </li>
                 </ul >
-            </StyleSidebar > */}
-            <StyleSidebarMobile style={{display:'flex'}}>
+            </StyleSidebar >
+            {/* <StyleSidebarMobile style={{display:'flex'}}>
             <ul>
                     <li><a href=""> <Image src={AllProductImage} alt="" />All</a>
                         All
@@ -177,7 +178,7 @@ const HomeSidebar = () => {
                         Freeship
                     </li>
                 </ul >
-            </StyleSidebarMobile>
+            </StyleSidebarMobile> */}
         </>
     )
 }

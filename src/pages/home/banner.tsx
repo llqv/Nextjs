@@ -3,12 +3,13 @@ import Image from 'next/image';
 import BannerImg from '../Banner.jpg';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
+import '../../../src/assets/css/styles.scss'
 import styled from 'styled-components';
 
 
 const BannerStyle = styled.div `
     position: relative;
-    margin-top :4px;
+    margin-top :0.4rem;
     text-align: center;
     background: '#FFFFFF';
     .banner-img {

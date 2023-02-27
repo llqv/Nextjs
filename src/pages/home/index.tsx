@@ -11,7 +11,7 @@ const Home = (props: Props) => {
     return (
         <>
             <div style={{ position: 'relative' }}>
-                <Layout style={{ backgroundColor: 'white', maxWidth:'1500px', margin:'auto'}}>
+                <Layout style={{ backgroundColor: 'white', maxWidth:'150rem', margin:'auto'}}>
                     <HomeHeader />
                     <HomeBanner />
                     <div style={{display:'flex'}}>

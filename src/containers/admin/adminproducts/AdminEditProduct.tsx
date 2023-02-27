@@ -17,7 +17,7 @@ interface IData {
 }
 interface CollectionCreateFormProps {
     open: boolean;
-    onUpdate: any;
+    onUpdate: any; 
     onCancel: () => void;
     onnotification: any;
     product: { key: string, name: string, price: number, quantity: number, desc: string, category: string, image: string }
@@ -131,7 +131,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
 
 const AdminEditProduct = ({ product, resetdata }: { resetdata: any, product: { key: string, name: string, price: number, quantity: number, desc: string, category: string, image: string } }) => {
 
-    // console.log("hahah", idproduct);
+    // console.log("hahah");
     // console.log(idproduct);
     const [open, setOpen] = useState(false);
     const handleUpdate = async (id: number, updatedData: IData) => {

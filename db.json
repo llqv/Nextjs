@@ -1,18 +1,12 @@
 {
   "products": [
     {
-      "id": 6,
-      "name": "Product 8",
+      "name": "Product 8 update",
       "price": "800",
+      "quantity": 767,
+      "category": "category 2",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 5,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
+      "id": 5
     },
     {
       "name": "432",
@@ -45,6 +39,14 @@
       "category": "category 3",
       "description": "543",
       "id": 87
+    },
+    {
+      "name": "gfdgfdg update",
+      "price": 543,
+      "quantity": 543543,
+      "category": "category 1",
+      "description": "vxvcxvcxvx",
+      "id": 88
     }
   ],
   "categories": [
@@ -59,6 +61,18 @@
     {
       "id": 3,
       "name": "Category 3"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "admin123"
+    },
+    {
+      "email": "johndoe@example.com",
+      "password": "$2a$10$0raYXylkKs3NmbiSiM8H1e46u.nuFXTV04KrGaAbUA6oBgvpKulxi",
+      "id": 1,
+      "username": "johndoe"
     }
   ]
 }

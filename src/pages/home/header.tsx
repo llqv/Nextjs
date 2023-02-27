@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import AvatarImg from '../Avatar.png';
 import LogoImg from '../Logo.png';
+import '../../../src/assets/css/styles.scss'
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -12,26 +13,26 @@ const HeaderStyleDesktop = styled.div`
     text-align: center;
     color: black;
     padding-inline: 50;
-    line-height: 64px;
+    line-height: 6.4rem;
     background-color:#FFFFFF;
     @media screen and (max-width: 1100px) { 
         display: none;
     }
     .avatar {
-        margin-top: 17px;
+        margin-top: 1.7rem;
     }
     .input-type{
-        border: 1px solid #FCDAB0 ;
+        border: 0.1rem solid #FCDAB0 ;
         
     }
     .logo-img{
-        margin-top: 14px;
+        margin-top: 1.4rem;
     }
     .select-options-region {
-        width: 100px;
+        width: 10rem;
     }
     .select-options-language{
-        width: 80px;
+        width: 8rem;
     }
 `
 
@@ -40,56 +41,53 @@ const HeaderStyle = styled.div`
     text-align: center;
     color: black;
     padding-inline: 50;
-    line-height: 64px;
+    line-height: 6.4rem;
     background-color:#FFFFFF;
     @media screen and (min-width: 1099px) { 
         display: none;
     }
 `
-const StyleContent = styled.div`
-    margin: 14;
-`
 
 const StyleButtonAddress = styled.button`
     position: absolute;
-    top: 21px;
-    right: 5px;
-    width: 74px;
-    height: 34px;
+    top: 2.1rem;
+    right: 0.5rem;
+    width: 7.4rem;
+    height: 3.4rem;
     background-color: #FFFFFF;
-    border-radius:10px;
+    border-radius:1rem;
     border: 1px solid #FCDAB0;
 `
 const StyleButtonOrder = styled.button`
-    width: 74px;
-    height: 34px;
+    width: 7.4rem;
+    height: 3.4rem;
     background-color: #FF881D;
-    border-radius:10px;
+    border-radius:1rem;
     border: 1px solid #FCDAB0;
     font-family: 'Gilroy';
     color: white;
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
 `
 const StyleButtonLanguage = styled.button`
-    width: 74px;
-    height: 34px;
+    width: 7.4rem;
+    height: 3.4rem;
     background-color: #FFFFFF;
-    border-radius:10px;
+    border-radius:1rem;
     border: 1px solid #FCDAB0;
 `
 const StyleLogin = styled.p`
-    padding-top:13px;
+    padding-top:1.3rem;
     text-decoration: underline;
-    width: 63px;
-    height: 16px;
+    width: 6.3rem;
+    height: 1.6rem;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 700;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
     text-align: center;
     color: #007AFF;
     flex: none;

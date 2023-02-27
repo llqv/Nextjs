@@ -60,7 +60,7 @@ const AdminListProduct = (props: Props) => {
                     desc: product.description
                 })) || []}>
                     <Column title="Name" dataIndex="name" key="name" />
-                    <Column title="Image" dataIndex="img"  key="img" />
+                    <Column title="Image" dataIndex="img" key="img" />
                     <Column title="Price" dataIndex="price" key="price" />
                     <Column title="Quantity" dataIndex="quantity" key="quantity" />
                     <Column title="Category" dataIndex="category" key="category" />

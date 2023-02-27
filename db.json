@@ -1,35 +1,6 @@
 {
   "products": [
     {
-      "name": "Product 7",
-      "price": "700",
-      "quantity": 123,
-      "category": "category 3",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "id": 7
-    },
-    {
-      "id": 2,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 83,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
-      "id": 4,
-      "name": "Product 8",
-      "price": "800",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "category": "Category 3"
-    },
-    {
       "id": 6,
       "name": "Product 8",
       "price": "800",
@@ -50,6 +21,30 @@
       "category": "category 2",
       "description": "432432432",
       "id": 84
+    },
+    {
+      "name": "321 update",
+      "price": 321,
+      "quantity": 321,
+      "category": "category 2",
+      "description": "32132132",
+      "id": 85
+    },
+    {
+      "name": "321",
+      "price": 321,
+      "quantity": 321,
+      "category": "category 3",
+      "description": "321",
+      "id": 86
+    },
+    {
+      "name": "543",
+      "price": 543,
+      "quantity": 543,
+      "category": "category 3",
+      "description": "543",
+      "id": 87
     }
   ],
   "categories": [
@@ -64,26 +59,6 @@
     {
       "id": 3,
       "name": "Category 3"
-    }
-  ],
-  "users": [
-    {
-      "name": "User 1",
-      "email": "user1@gmail.com",
-      "password": "user1@123",
-      "role": 1
-    },
-    {
-      "name": "User 2",
-      "email": "user2@gmail.com",
-      "password": "user2@123",
-      "role": 1
-    },
-    {
-      "name": "admin",
-      "email": "admin@gmail.com",
-      "password": "admin@123",
-      "role": 0
     }
   ]
 }

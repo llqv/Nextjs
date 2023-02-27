@@ -8,6 +8,7 @@ import AndroidImage from '../Group 63.png'
 import LogoImg from '../LogoFooter.png';
 import SocialNetWorkImage from '../Group 61.png'
 import SubcribeImage from '../image 2.png'
+import '../../../src/assets/css/styles.scss'
 
 const FooterStyle =styled.div `
     padding-top: 11rem;

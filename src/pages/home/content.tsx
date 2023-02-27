@@ -34,12 +34,12 @@ const { Header, Footer, Sider, Content } = Layout;
 const ContentStyle = styled.div`
     width: 100%;
     max-width: 700;
-    padding : 0.2rem 0.2rem 0px 0.8rem;
+    padding : 2rem 2rem 0px 8rem;
     min-height: 120;
     height: 1700;
     color: '#fff';
     @media screen and (max-width : 990px) {
-        padding : 0.2rem 0px 0px 0px;
+        padding : 2rem 0px 0px 0px;
     }
 `
 const StyleContent = styled.div`

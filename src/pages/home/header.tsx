@@ -1,12 +1,18 @@
-import { SearchOutlined } from '@ant-design/icons';
-import { Col, Input, Layout, Row, Select } from 'antd';
+import { DownOutlined, SearchOutlined } from '@ant-design/icons';
+import { Col, Dropdown, Input, Layout, MenuProps, message, Row, Select, Space } from 'antd';
 import Image from 'next/image';
 import styled from 'styled-components';
 import AvatarImg from '../Avatar.png';
 import LogoImg from '../Logo.png';
 import '../../../src/assets/css/styles.scss'
+import { authApi } from '@/api/auth-api';
+import Cookies from 'cookies'
+import cookies from 'cookies';
+import { useRouter } from 'next/router';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
+
+
 
 const HeaderStyleDesktop = styled.div`
     position: 'relative';
@@ -95,80 +101,135 @@ const StyleLogin = styled.p`
     flex-grow: 0;
 `
 const HomeHeader = (props: Props) => {
-    return (
-        <>
-            <HeaderStyleDesktop>
-                <Row >
-                    <Col span={4}>
-                        <Image className='logo-img' src={LogoImg} alt="" />
-                    </Col>
-                    <Col span={4}>
-                        <Select className='select-options-region'
-                            defaultValue="HaNoi"
-                            options={[
-                                { value: 'HCM', label: 'HCM' },
-                                { value: 'HCM', label: 'HCM' },
-                                { value: 'HCM', label: 'HCM' },
-                                { value: 'HCM', label: 'HCM', disabled: true },
-                            ]}
-                        />
-                    </Col>
-                    <Col span={9}>
-                        <Input className='input-type'
-                            placeholder="Nhập từ khoá"
-                            prefix={<SearchOutlined />} />
-                    </Col>
-                    <Col span={6}>
-                        <Row gutter={[16, 16]}>
-                            <Col span={12}>
-                                <StyleButtonOrder>Order</StyleButtonOrder>
-                            </Col>
-                            <Col span={6}>
-                                <Select className='select-options-language'
-                                    defaultValue="EN"
-                                    options={[
-                                        { value: 'EN', label: 'EN' },
-                                        { value: 'HCM', label: 'HCM' },
-                                        { value: 'HCM', label: 'HCM' },
-                                        { value: 'HCM', label: 'HCM', disabled: true },
-                                    ]}
-                                />
-                            </Col>
-                            <Col span={6}>
-                                <Image className='avatar' src={AvatarImg} alt="" />
-                            </Col>
-                        </Row>
-                    </Col>
+    const onClick: MenuProps['onClick'] = ({ key }) => {
+        message.info(`${key}`);
+    };
 
-                </Row>
-            </HeaderStyleDesktop>
-            <HeaderStyle>
-                <Row >
-                    <Col>
-                        <Row gutter={20} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                            <Col style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                <Image src={AvatarImg} alt="" />
-                            </Col>
-                            <Col><StyleButtonLanguage>EN</StyleButtonLanguage></Col>
-                        </Row>
-                    </Col>
-                    <Col flex={1} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                        <Image src={LogoImg} alt="" />
-                    </Col>
-                    <Col>
-                        <StyleButtonOrder>Order</StyleButtonOrder>
-                    </Col>
-                    <Col span={24}>
-                        <Input
-                            style={{ height: '45px' }}
-                            placeholder="Nhập từ khoá"
-                            prefix={<SearchOutlined />} />
-                        <StyleButtonAddress>Ha noi</StyleButtonAddress>
-                    </Col>
-                </Row>
-            </HeaderStyle>
-        </>
-    )
+    const items: MenuProps['items'] = [
+        {
+            label: (
+                <a href='/auths/login' onClick={handleLoginClick}>
+                    Log In
+                </a>
+            ),
+            key: 'Login Template',
+        },
+        {
+            label: 'Setting',
+            key: '2',
+        },
+        {
+            label: (
+                <a onClick={handleLogoutClick}>
+                    Log Out
+                </a>
+            ),
+            key: 'Logout Successfully'
+        },
+    ];
+    const router = useRouter()
+    async function handleLoginClick() {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        try {
+          await authApi.login({
+            username: 'admin',
+            password: 'admin123'
+          })
+        router.push('/home')
+        } catch (error) {
+          console.log('failed to login', error);
+    
+        }
+      }
+    async function handleLogoutClick() {
+        try {
+            await authApi.logout()
+        } catch (error) {
+            console.log('failed to logOut', error);
+        }
+    }
+
+        return (
+            <>
+                <HeaderStyleDesktop>
+                    <Row >
+                        <Col span={4}>
+                            <Image className='logo-img' src={LogoImg} alt="" />
+                        </Col>
+                        <Col span={4}>
+                            <Select className='select-options-region'
+                                defaultValue="HaNoi"
+                                options={[
+                                    { value: 'HCM', label: 'HCM' },
+                                    { value: 'HCM', label: 'HCM' },
+                                    { value: 'HCM', label: 'HCM' },
+                                    { value: 'HCM', label: 'HCM', disabled: true },
+                                ]}
+                            />
+                        </Col>
+                        <Col span={9}>
+                            <Input className='input-type'
+                                placeholder="Nhập từ khoá"
+                                prefix={<SearchOutlined />} />
+                        </Col>
+                        <Col span={6}>
+                            <Row gutter={[16, 16]}>
+                                <Col span={12}>
+                                    <StyleButtonOrder>Order</StyleButtonOrder>
+                                </Col>
+                                <Col span={6}>
+                                    <Select className='select-options-language'
+                                        defaultValue="EN"
+                                        options={[
+                                            { value: 'EN', label: 'EN' },
+                                            { value: 'HCM', label: 'HCM' },
+                                            { value: 'HCM', label: 'HCM' },
+                                            { value: 'HCM', label: 'HCM', disabled: true },
+                                        ]}
+                                    />
+                                </Col>
+                                <Col span={6}>
+                                    {/* <Image className='avatar' src={AvatarImg} alt="" /> */}
+                                    <Dropdown menu={{ items, onClick }}>
+                                        <a onClick={(e) => e.preventDefault()}>
+                                            <Space>
+                                                <Image className='avatar' src={AvatarImg} alt="" />
+                                            </Space>
+                                        </a>
+                                    </Dropdown>
+                                </Col>
+                            </Row>
+                        </Col>
+
+                    </Row>
+                </HeaderStyleDesktop>
+                <HeaderStyle>
+                    <Row >
+                        <Col>
+                            <Row gutter={20} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                <Col style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                    <Image src={AvatarImg} alt="" />
+                                </Col>
+                                <Col><StyleButtonLanguage>EN</StyleButtonLanguage></Col>
+                            </Row>
+                        </Col>
+                        <Col flex={1} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                            <Image src={LogoImg} alt="" />
+                        </Col>
+                        <Col>
+                            <StyleButtonOrder>Order</StyleButtonOrder>
+                        </Col>
+                        <Col span={24}>
+                            <Input
+                                style={{ height: '45px' }}
+                                placeholder="Nhập từ khoá"
+                                prefix={<SearchOutlined />} />
+                            <StyleButtonAddress>Ha noi</StyleButtonAddress>
+                        </Col>
+                    </Row>
+                </HeaderStyle>
+            </>
+        )
 }
 
 export default HomeHeader

@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "name": "Product 8 update",
-      "price": "800",
-      "quantity": 767,
-      "category": "category 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe animi, impedit quibusdam laboriosam recusandae.",
-      "id": 5
-    },
-    {
       "name": "432",
       "price": 432,
       "quantity": 432,

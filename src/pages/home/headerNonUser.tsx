@@ -6,13 +6,15 @@ import AvatarImg from '../Avatar.png';
 import LogoImg from '../Logo.png';
 import '../../../src/assets/css/styles.scss'
 import { authApi } from '@/api/auth-api';
-import Cookies from 'cookies'
-import cookies from 'cookies';
-import { useRouter } from 'next/router';
-import { hasCookie } from 'cookies-next';
-import HomeHeaderNonUser from './headerNonUser';
-import Link from 'next/link';
+import HomeHeader from './header';
+import Link from 'next/link'
 type Props = {}
+import { getCookies, hasCookie } from 'cookies-next';
+import cookies from 'next-cookies';
+import cookie from 'js-cookie'
+import nextCookie from 'next-cookies';
+import Cookies from 'js-cookie'
+
 const { Header, Footer, Sider, Content } = Layout;
 
 
@@ -103,31 +105,10 @@ const StyleLogin = styled.p`
     order: 0;
     flex-grow: 0;
 `
-const HomeHeader = (props: Props) => {
-    const onClick: MenuProps['onClick'] = ({ key }) => {
-        message.info(`${key}`);
-    };
-    const items: MenuProps['items'] = [
-        {
-            label: 'Setting',
-            key: 'Setting',
-        },
-        {
-            label: (
-                <Link onClick={handleLogoutClick} href={''}>
-                    Log Out
-                </Link>
-            ),
-            key: 'Logout Successfully'
-        },
-    ];
-    async function handleLogoutClick() {
-        try {
-            await authApi.logout()
-        } catch (error) {
-            console.log('failed to logOut', error);
-        }
-    }
+
+
+const HomeHeaderNonUser = (props: Props) => {
+        console.log(props);
         return (
             <>
                 <HeaderStyleDesktop>
@@ -137,7 +118,7 @@ const HomeHeader = (props: Props) => {
                         </Col>
                         <Col span={4}>
                             <Select className='select-options-region'
-                                defaultValue="Ha Noi"
+                                defaultValue="HaNoi"
                                 options={[
                                     { value: 'HCM', label: 'HCM' },
                                     { value: 'HCM', label: 'HCM' },
@@ -168,13 +149,7 @@ const HomeHeader = (props: Props) => {
                                     />
                                 </Col>
                                 <Col span={6}>
-                                    <Dropdown menu={{ items, onClick }}>
-                                        <a onClick={(e) => e.preventDefault()}>
-                                            <Space>
-                                                <Image className='avatar' src={AvatarImg} alt="" />
-                                            </Space>
-                                        </a>
-                                    </Dropdown>
+                                    <Link href="/auths/login">Đăng nhập</Link>
                                 </Col>
                             </Row>
                         </Col>
@@ -210,4 +185,4 @@ const HomeHeader = (props: Props) => {
         )
 }
 
-export default HomeHeader
+export default HomeHeaderNonUser

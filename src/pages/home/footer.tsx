@@ -10,11 +10,14 @@ import SocialNetWorkImage from '../Group 61.png'
 import SubcribeImage from '../image 2.png'
 import '../../../src/assets/css/styles.scss'
 
-const FooterStyle =styled.div `
+const FooterStyle = styled.div`
     padding-top: 11rem;
     text-align: center;
     color: #fff;
     background-color: white;
+    @media screen and (max-width : 990px) {
+        display:none;
+    }
 `
 const StyleContentFooter = styled.div`
    font-family: 'Gilroy';
@@ -71,6 +74,19 @@ const StyleLogoFooter = styled.div`
 const StyleOperatingSystem = styled.div`
     padding-top: 2.5rem;
 `
+
+const FooterStyleMobile = styled.div`
+    padding-top: 3rem;
+    ul{
+        li{
+            list-style-type:none;
+            text-align: center;
+        }
+    }
+    @media screen and (min-width : 980px) {
+        display:none;
+    }
+`
 const HomeFooter = (props: Props) => {
 
     return (
@@ -125,6 +141,28 @@ const HomeFooter = (props: Props) => {
                     </Col>
                 </Row>
             </FooterStyle>
+            <FooterStyleMobile>
+                <ul>
+                    <li>
+                        <Image src={LogoImg} alt="" />
+                    </li>
+                    <li>
+                        <p>@ Capichi 2021 - A Food Delivery Corporation</p>
+                    </li>
+                    <li>
+                        <Image src={SocialNetWorkImage} alt="" />
+                    </li>
+                    <li>Địa chỉ công ty</li>
+                    <li>Công ty cổ phần Capichi</li>
+                    <li>Tầng 4, tòa nhà VietinBank, số 1 Lê Thái Tông, phường Cầu giấy, quận Cầu Giấy, Hà Nội</li>
+                    <li>Giấy CN ĐKDN số: 02264651313, do sở Kế hoạch và Đầu tư TP. Hà Nội cấp ngày 11/12/2020, sửa đổi lần thứ 21, ngày 01/02/2021</li>
+                    <li>Số điện thoại: 1900 1522</li>
+                    <li>Email: capichi@gmail.com</li>
+                    <li>
+                        <Image src={SubcribeImage} alt="" />
+                    </li>
+                </ul>
+            </FooterStyleMobile>
         </>
     )
 }

@@ -9,11 +9,21 @@ import HomeHeader from './header';
 import HomeHeaderNonUser from './headerNonUser';
 import HomeSidebar from './sidebar';
 import cookie from "cookie"
+import styled from 'styled-components';
 
 // import { cookies } from 'next/headers'
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
-
+const StyleForm = styled.div`
+    .form{
+        @media screen and (min-width :990px) {
+            display: flex;
+        }
+        @media screen and (max-width :980px) {
+            flex: none;
+        }
+    }
+`
 const Home = (props: any) => {
     return (
         <>
@@ -24,10 +34,12 @@ const Home = (props: any) => {
                         props?.access_token ? <HomeHeader /> : <HomeHeaderNonUser />
                     }
                     <HomeBanner />
-                    <div style={{ display: 'flex' }}>
+                    <StyleForm>
+                    <div className='form'>
                         <HomeSidebar />
                         <HomeContent />
                     </div>
+                    </StyleForm>
                     <HomeFooter />
                 </Layout>
             </div>

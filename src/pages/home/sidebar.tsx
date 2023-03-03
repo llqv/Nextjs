@@ -55,40 +55,44 @@ const StyleSidebar = styled.div`
     }
 `
 const StyleSidebarMobile = styled.div`
-    /* margin-left: 40px;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 0.6rem;
     width: 100%;
-    max-width: 258px;
-    height: 1700px;
     background: #FFFFFF;
-    box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-        @media screen and (max-width: 990px) {
+    overflow-x: auto;
+    overflow: hidden;
+/* /Cards Pressed button */
+    @media screen and (min-width: 985px) {
     display: none;
   }
-    ul{
+    ul{ 
+        width: 100%;
+        margin-left: 0rem;
+        padding-top: 1rem;
+        display: flex;
         list-style: none;
         text-align: center;
+        box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
         li {
-            display: flex;
-            padding-bottom: 20px;
+            margin-left: 3rem;
+            padding-bottom: 2rem;
             color: black;
             text-align: left;
             font-family: 'Gilroy';
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 1.4rem;
+            line-height: 3rem;
             color: #000000;
             flex: none;
-            order: 1;
-            flex-grow: 1;
-            a{
-                text-align: center;
-                margin-right: 10px;
-            }
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+            justify-content: space-between;
+            align-items: baseline;
+            align-content: space-around;
+            text-align: center;
         }
-    } */
+    }
 `
 const HomeSidebar = () => {
     return (
@@ -136,49 +140,49 @@ const HomeSidebar = () => {
                     </li>
                 </ul >
             </StyleSidebar >
-            {/* <StyleSidebarMobile style={{display:'flex'}}>
-            <ul>
-                    <li><a href=""> <Image src={AllProductImage} alt="" />All</a>
+            <StyleSidebarMobile>
+                <ul className='sibar-content' id='sidebar-mobile'>
+                    <li><Image className='menu-item' src={AllProductImage} alt="" />
                         All
                     </li>
-                    <li><a href=""><Image src={FastFoodImage} alt="" />Fast food</a>
+                    <li><Image  className='menu-item' src={FastFoodImage} alt="" />
                         Fast food
                     </li>
-                    <li><a href=""><Image src={TakeAwayImage} alt="" />Take-away</a>
+                    <li><Image className='menu-item'  src={TakeAwayImage} alt="" />
                         Take-away
                     </li>
-                    <li><a href=""><Image src={ChineseFoodImage} alt="" />Chinese food</a>
+                    <li><Image  className='menu-item' src={ChineseFoodImage} alt="" />
                         Chinese food
                     </li>
-                    <li><a href=""><Image src={JapaneseFoodImage} alt="" />Japanese food</a>
+                    <li><Image  className='menu-item' src={JapaneseFoodImage} alt="" />
                         Japanese food
                     </li>
-                    <li><a href=""><Image src={VoucherImage} alt="" />Voucher</a>
+                    <li><Image  className='menu-item' src={VoucherImage} alt="" />
                         Voucher
                     </li>
-                    <li><a href=""><Image src={VegetarianImage} alt="" />Vegetarian</a>
+                    <li><Image  className='menu-item' src={VegetarianImage} alt="" />
                         Vegetarian
                     </li>
-                    <li><a href=""><Image src={CoffeeImage} alt="" />Coffee</a>
+                    <li><Image  className='menu-item' src={CoffeeImage} alt="" />
                         Coffee
                     </li>
-                    <li><a href=""><Image src={PizzaImage} alt="" />Pizza</a>
+                    <li><Image  className='menu-item' src={PizzaImage} alt="" />
                         Pizza
                     </li>
-                    <li><a href=""><Image src={GiftImage} alt="" />Gift</a>
+                    <li><Image  className='menu-item' src={GiftImage} alt="" />
                         Gift
                     </li>
-                    <li><a href=""><Image src={SweetImage} alt="" />Sweet</a>
+                    <li><Image  className='menu-item' src={SweetImage} alt="" />
                         Sweet
                     </li>
-                    <li><a href=""><Image src={MilkImage} alt="" />Milk</a>
+                    <li><Image  className='menu-item' src={MilkImage} alt="" />
                         Milk
                     </li>
-                    <li><a href=""><Image src={FreeshipImage} alt="" />Freeship</a>
+                    <li><Image  className='menu-item' src={FreeshipImage} alt="" />
                         Freeship
                     </li>
                 </ul >
-            </StyleSidebarMobile> */}
+            </StyleSidebarMobile>
         </>
     )
 }

@@ -7,7 +7,7 @@ import '../../../src/assets/css/styles.scss'
 import styled from 'styled-components';
 
 
-const BannerStyle = styled.div `
+const BannerStyle = styled.div`
     position: relative;
     margin-top :0.4rem;
     text-align: center;

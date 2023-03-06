@@ -76,7 +76,7 @@ const StyleOperatingSystem = styled.div`
 `
 
 const FooterStyleMobile = styled.div`
-    padding-top: 3rem;
+    padding-top: 2rem;
     ul{
         li{
             list-style-type:none;

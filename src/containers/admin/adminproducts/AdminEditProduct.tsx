@@ -94,9 +94,10 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                     <InputNumber style={{ width: 470 }} />
                 </Form.Item>
                 <Form.Item name="category" label="Category" rules={[{ required: true, message: 'Please choose your Category!' }]}>
-                    <Select defaultValue={product.category}
+                    <Select
                         placeholder="Select a category"
-                        allowClear
+                        defaultValue={product.category}
+                     
                     >
                         <Option value="category 1">Category 1</Option>
                         <Option value="category 2">Category 2</Option>
@@ -119,7 +120,6 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
                         getValueFromEvent={normFile}
                         initialValue={product.image}
                     >
-
                         <Upload name="logo" action="/upload.do" listType="picture">
                             <Button icon={<UploadOutlined />}>Click to upload</Button>
                         </Upload>

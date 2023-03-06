@@ -3,23 +3,23 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import httpProxy from 'http-proxy'
 import Cookies from 'cookies'
 type Data = {
-  message: string
+     message: string
 }
-export const config ={
+export const config = {
      api: {
-          bodyParser : false
+          bodyParser: false
      },
 }
 const proxy = httpProxy.createProxyServer()
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+     req: NextApiRequest,
+     res: NextApiResponse<Data>
 ) {
      if (req.method != "POST") {
-          res.status(401).json({message:'method not supported'})
+          res.status(401).json({ message: 'method not supported' })
      }
-   const cookies = new Cookies(req,res)
-   cookies.set('access_token')
+     const cookies = new Cookies(req, res)
+     cookies.set('access_token')
 
-   res.status(200).json({message : 'logout Successfully'})
+     res.status(200).json({ message: 'logout Successfully' })
 }

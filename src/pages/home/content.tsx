@@ -28,6 +28,7 @@ import StatusStoreImage from '../Vector.png';
 import VegetarianImage from '../vergetarian2.png';
 import VoucherImage from '../voucher.png';
 import '../../../src/assets/css/styles.scss'
+import { start } from 'repl';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -66,27 +67,17 @@ const StyleFormContent = styled.div`
     }
 
 `
-const StyleContentProduct = styled.div`
-width: 100%;
-max-width: 2.58rem;
-min-width: 1.72rem;
-min-height: 3.12rem;
-height: 3.9rem;
-    margin-left: 0.1rem;
-    font-family: 'Gilroy';
-    font-style: normal;
-`
 const Styleh1 = styled.div`
 /* Peppo restaurant */
+
 width: 100%;
-max-width: 2.26rem;
 margin-bottom: 2rem;
 
 /* H4 */
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 700;
-font-size: 2.4rem;
+font-size: 2rem;
 /* identical to box height, or 133% */
 
 
@@ -148,6 +139,7 @@ const StyleTime = styled.div`
 /* Frame 62 */
 
 width:100%;
+max-width: 30rem;
 /* Auto layout */
 margin-top: 1rem;
 text-align: center;
@@ -155,12 +147,18 @@ display: flex;
 flex-direction: row;
 padding: 0px;
 gap: 2.6rem;
-
 margin-bottom: 3rem;
-
+/* .time-store{
+    @media screen and (max-width:400px) {
+ display: grid ;
+}
+} */
+@media screen and (min-width:400px) {
+ display: grid ;
+}
 /* Inside auto layout */
 .time-start-image{
-    margin-left: 0.6rem;
+    margin-left: 0.2rem;
 }
 .time-end-img{
     margin-left: 1.8rem;
@@ -172,17 +170,23 @@ const StyleBooking = styled.div`
 /* Auto layout */
     width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 4rem;
     .delivery-img{
-        object-fit: cover;
+        @media screen and (max-width: 400px) {
+            width: 10rem;
+        }
+
     }
     .booking-img{
-        object-fit: cover;
+        margin-left: 2rem;
+        @media screen and (max-width: 400px) {
+            width: 7rem;
+            height: 7rem;
+            margin-left: 0rem;
+        }
     }
-
 `
 const HomeContent = (props: Props) => {
 
@@ -215,22 +219,26 @@ const HomeContent = (props: Props) => {
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                    <Row>
+                                    <Row className='time-store'>
                                         <Image src={TimeImage} alt="" />
                                         <Col className='time-start-image' span={10}>
                                             <Image src={TimeStartImage} alt="" />
                                         </Col>
-                                        <Col span={10}>
-                                            <Image className='time-end-img' src={TimeEndImage} alt="" />
+                                        <Col className='time-end-img'  span={10}>
+                                            <Image src={TimeEndImage} alt="" />
                                         </Col>
                                     </Row>
-
                                 </StyleTime>
                                 <StyleBooking>
-                                    <Image className='delivery-img' src={DeliveryImage} alt="" />
-                                    <Image className='booking-img' src={BookingImage} alt="" />
+                                <Row>
+                                    <Col span={8}>
+                                        <Image className='delivery-img' src={DeliveryImage} alt="" /> 
+                                    </Col>
+                                    <Col span={8} offset={8}>
+                                        <Image className='booking-img' src={BookingImage} alt="" />
+                                    </Col>
+                                </Row>
                                 </StyleBooking>
-
                             </Card>
                         </Col>
                         <Col span={8} xs={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8 }}>
@@ -257,22 +265,26 @@ const HomeContent = (props: Props) => {
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                    <Row>
+                                    <Row className='time-store'>
                                         <Image src={TimeImage} alt="" />
                                         <Col className='time-start-image' span={10}>
                                             <Image src={TimeStartImage} alt="" />
                                         </Col>
-                                        <Col span={10}>
-                                            <Image className='time-end-img' src={TimeEndImage} alt="" />
+                                        <Col className='time-end-img'  span={10}>
+                                            <Image src={TimeEndImage} alt="" />
                                         </Col>
                                     </Row>
-
                                 </StyleTime>
                                 <StyleBooking>
-                                    <Image className='delivery-img' src={DeliveryImage} alt="" />
-                                    <Image className='booking-img' src={BookingImage} alt="" />
+                                <Row>
+                                    <Col span={8}>
+                                        <Image className='delivery-img' src={DeliveryImage} alt="" /> 
+                                    </Col>
+                                    <Col span={8} offset={8}>
+                                        <Image className='booking-img' src={BookingImage} alt="" />
+                                    </Col>
+                                </Row>
                                 </StyleBooking>
-
                             </Card>
                         </Col>
                         <Col span={8} xs={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8 }}>
@@ -299,22 +311,26 @@ const HomeContent = (props: Props) => {
                                     Đang mở cửa
                                 </StyleStatus>
                                 <StyleTime>
-                                    <Row>
+                                    <Row className='time-store'>
                                         <Image src={TimeImage} alt="" />
                                         <Col className='time-start-image' span={10}>
                                             <Image src={TimeStartImage} alt="" />
                                         </Col>
-                                        <Col span={10}>
-                                            <Image className='time-end-img' src={TimeEndImage} alt="" />
+                                        <Col className='time-end-img'  span={10}>
+                                            <Image src={TimeEndImage} alt="" />
                                         </Col>
                                     </Row>
-
                                 </StyleTime>
                                 <StyleBooking>
-                                    <Image className='delivery-img' src={DeliveryImage} alt="" />
-                                    <Image className='booking-img' src={BookingImage} alt="" />
+                                <Row>
+                                    <Col span={8}>
+                                        <Image className='delivery-img' src={DeliveryImage} alt="" /> 
+                                    </Col>
+                                    <Col span={8} offset={8}>
+                                        <Image className='booking-img' src={BookingImage} alt="" />
+                                    </Col>
+                                </Row>
                                 </StyleBooking>
-
                             </Card>
                         </Col>
 

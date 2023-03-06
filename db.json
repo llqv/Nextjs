@@ -1,18 +1,10 @@
 {
   "products": [
     {
-      "name": "432",
-      "price": 432,
-      "quantity": 432,
-      "category": "category 2",
-      "description": "432432432",
-      "id": 84
-    },
-    {
       "name": "321 update",
       "price": 321,
       "quantity": 321,
-      "category": "category 2",
+      "category": "category 3",
       "description": "32132132",
       "id": 85
     },
@@ -20,7 +12,7 @@
       "name": "321",
       "price": 321,
       "quantity": 321,
-      "category": "category 3",
+      "category": "category 1",
       "description": "321",
       "id": 86
     },
@@ -28,7 +20,7 @@
       "name": "543",
       "price": 543,
       "quantity": 543,
-      "category": "category 3",
+      "category": "category 2",
       "description": "543",
       "id": 87
     },
@@ -36,9 +28,17 @@
       "name": "gfdgfdg update",
       "price": 543,
       "quantity": 543543,
-      "category": "category 2",
+      "category": "category 3",
       "description": "vxvcxvcxvxupdate",
       "id": 88
+    },
+    {
+      "name": "Product 1 update",
+      "price": 12,
+      "quantity": 20,
+      "category": "category 2",
+      "description": "Product 1 description",
+      "id": 89
     }
   ],
   "categories": [

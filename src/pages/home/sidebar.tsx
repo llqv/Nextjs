@@ -15,6 +15,7 @@ import SweetImage from '../sweet.png';
 import VegetarianImage from '../vergetarian2.png';
 import VoucherImage from '../voucher.png';
 import '../../../src/assets/css/styles.scss'
+import { break_points } from '@/utils/styled';
 
 const StyleSidebar = styled.div`
     margin-left: 4rem;
@@ -27,7 +28,7 @@ const StyleSidebar = styled.div`
     background: #FFFFFF;
     /* Navigation Menu Bar */
     box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
-        @media screen and (max-width: 990px) {
+        ${break_points.sidebar_phone} {
     display: none;
   }
     ul{
@@ -61,7 +62,7 @@ const StyleSidebarMobile = styled.div`
     overflow-x: auto;
     overflow: hidden;
 /* /Cards Pressed button */
-    @media screen and (min-width: 985px) {
+    ${break_points.sidebar_desktop} {
     display: none;
   }
     ul{ 

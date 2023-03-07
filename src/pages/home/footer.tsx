@@ -9,13 +9,14 @@ import LogoImg from '../LogoFooter.png';
 import SocialNetWorkImage from '../Group 61.png'
 import SubcribeImage from '../image 2.png'
 import '../../../src/assets/css/styles.scss'
+import { break_points } from '@/utils/styled';
 
 const FooterStyle = styled.div`
     padding-top: 11rem;
     text-align: center;
     color: #fff;
     background-color: white;
-    @media screen and (max-width : 990px) {
+    ${break_points.phone_only} {
         display:none;
     }
 `
@@ -83,7 +84,7 @@ const FooterStyleMobile = styled.div`
             text-align: center;
         }
     }
-    @media screen and (min-width : 980px) {
+    ${break_points.desktop_only} {
         display:none;
     }
 `

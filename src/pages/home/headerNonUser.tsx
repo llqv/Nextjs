@@ -1,4 +1,4 @@
-import { DownOutlined, SearchOutlined } from '@ant-design/icons';
+import { BranchesOutlined, DownOutlined, SearchOutlined } from '@ant-design/icons';
 import { Col, Dropdown, Input, Layout, MenuProps, message, Row, Select, Space } from 'antd';
 import Image from 'next/image';
 import styled from 'styled-components';
@@ -14,7 +14,7 @@ import cookies from 'next-cookies';
 import cookie from 'js-cookie'
 import nextCookie from 'next-cookies';
 import Cookies from 'js-cookie'
-
+import { break_points } from '@/utils/styled';
 const { Header, Footer, Sider, Content } = Layout;
 
 
@@ -26,7 +26,7 @@ const HeaderStyleDesktop = styled.div`
     padding-inline: 50;
     line-height: 6.4rem;
     background-color:#FFFFFF;
-    @media screen and (max-width: 1100px) { 
+    ${break_points.phone_only}{ 
         display: none;
     }
     .avatar {
@@ -54,7 +54,7 @@ const HeaderStyle = styled.div`
     padding-inline: 50;
     line-height: 6.4rem;
     background-color:#FFFFFF;
-    @media screen and (min-width: 1099px) { 
+    ${break_points.desktop_only}{ 
         display: none;
     }
 `

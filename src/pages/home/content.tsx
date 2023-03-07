@@ -28,7 +28,7 @@ import StatusStoreImage from '../Vector.png';
 import VegetarianImage from '../vergetarian2.png';
 import VoucherImage from '../voucher.png';
 import '../../../src/assets/css/styles.scss'
-import { start } from 'repl';
+import { break_points } from '@/utils/styled';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -39,7 +39,7 @@ const ContentStyle = styled.div`
     min-height: 120;
     height: 1700;
     color: '#fff';
-    @media screen and (max-width : 990px) {
+    ${break_points.content_mobile} {
         padding : 2rem 0px 0px 0px;
     }
 `
@@ -148,12 +148,9 @@ flex-direction: row;
 padding: 0px;
 gap: 2.6rem;
 margin-bottom: 3rem;
-/* .time-store{
-    @media screen and (max-width:400px) {
- display: grid ;
-}
-} */
-@media screen and (min-width:400px) {
+
+
+${break_points.content_mobile_custom}{
  display: grid ;
 }
 /* Inside auto layout */
@@ -174,17 +171,15 @@ const StyleBooking = styled.div`
     justify-content: space-between;
     height: 4rem;
     .delivery-img{
-        @media screen and (max-width: 400px) {
+        ${break_points.content_mobile_delivery}{
             width: 10rem;
         }
 
     }
     .booking-img{
-        margin-left: 2rem;
-        @media screen and (max-width: 400px) {
+        ${break_points.content_mobile_delivery}{
             width: 7rem;
             height: 7rem;
-            margin-left: 0rem;
         }
     }
 `

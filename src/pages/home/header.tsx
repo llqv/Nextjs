@@ -13,6 +13,7 @@ import { hasCookie } from 'cookies-next';
 import HomeHeaderNonUser from './headerNonUser';
 import Router from "next/router";
 import Link from 'next/link';
+import { break_points } from '@/utils/styled';
 type Props = {}
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -25,7 +26,7 @@ const HeaderStyleDesktop = styled.div`
     padding-inline: 50;
     line-height: 6.4rem;
     background-color:#FFFFFF;
-    @media screen and (max-width: 1100px) { 
+    ${break_points.phone_only}{ 
         display: none;
     }
     .avatar {
@@ -53,7 +54,7 @@ const HeaderStyle = styled.div`
     padding-inline: 50;
     line-height: 6.4rem;
     background-color:#FFFFFF;
-    @media screen and (min-width: 1099px) { 
+   ${break_points.desktop_only} { 
         display: none;
     }
 `

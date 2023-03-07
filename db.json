@@ -1,10 +1,10 @@
 {
   "products": [
     {
-      "name": "123 update 1",
+      "name": "123 update 123",
       "price": 1233,
       "quantity": 12345678910,
-      "category": "category 3",
+      "category": "category 2",
       "description": "123 update",
       "id": 4
     },

@@ -52,7 +52,7 @@ export async function getServerSideProps(context: any) {
     try {
         const cookies = cookie.parse(req ? req.headers.cookie : '');
         return {
-            props: { access_token: cookies.access_token || undefined },
+            props: { access_token: cookies.access_token || null },
         };
     } catch (error) {
         return {
